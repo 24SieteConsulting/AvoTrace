@@ -1,0 +1,14 @@
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\bin\Debug\Empacadoras.exe
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\bin\Debug\Empacadoras.pdb
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.csprojResolveAssemblyReference.cache
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.Properties.Resources.resources
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.csproj.GenerateResource.Cache
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.exe.licenses
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.exe
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.pdb
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.FrmEmpresa.resources
+c:\users\skyline\documents\visual studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.Principal.resources
+C:\Users\SKYLINE\Documents\Visual Studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.FrmConexion.resources
+C:\Users\SKYLINE\Documents\Visual Studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.FrmDataBases_SQL.resources
+C:\Users\SKYLINE\Documents\Visual Studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.FrmInstancia_SQL.resources
+C:\Users\SKYLINE\Documents\Visual Studio 2013\Projects\DXApplication1\Empacadoras\obj\Debug\Empacadoras.FrmConexion1.resources
