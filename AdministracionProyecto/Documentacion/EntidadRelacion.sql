@@ -128,8 +128,18 @@ begin
 end
 
 GO
+CREATE TABLE  CatProductor(
+IdProductor int PRIMARY KEY,
+IdTipoProductor int   NOT NULL,
+PrimerNombre   VARCHAR(50) ,
+SegundoNombre   VARCHAR(50) ,
+Paterno   VARCHAR(50) ,
+Materno   VARCHAR(50) ,
+RFC   VARCHAR(50) ,
+Homoclave   VARCHAR(50) 
+)
 
-
+GO
 
 CREATE TABLE  CatPais(
 IdPais int PRIMARY KEY,
@@ -295,7 +305,6 @@ ALTER TABLE CtrlProdHuerta
 ADD FOREIGN KEY (idHuerta)
 REFERENCES CatHuerta(idHuerta)
 GO
-GO
 ALTER TABLE CtrlProdHuerta
 ADD FOREIGN KEY (IdProductor)
 REFERENCES CatProductor(IdProductor)
@@ -378,14 +387,4 @@ REFERENCES CatDocumentacionProceso(IdDocumentacionProceso)
 
 
 
-CREATE TABLE  CatProductor(
-IdProductor int PRIMARY KEY,
-IdTipoProductor int   NOT NULL,
-PrimerNombre   VARCHAR(50) ,
-SegundoNombre   VARCHAR(50) ,
-Paterno   VARCHAR(50) ,
-Materno   VARCHAR(50) ,
-RFC   VARCHAR(50) ,
-Homoclave   VARCHAR(50) 
-)
 
