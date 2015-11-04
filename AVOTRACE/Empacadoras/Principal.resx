@@ -837,6 +837,53 @@
         K2G4Qj36Z/z+par9Xwz8MlhIz38d/2Hglw9eNS98+OqA5F/HHoXIJmU2fgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnDomicilios.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAATdEVYdFRpdGxlAFppcENvZGU7Q29kZTtJsi+oAAAC
+        IklEQVQ4T6WT7UtTYRjGHzdHWln/z/nk3zBKeqFwGoOkPkgZrLIaJe5DkDEwNSGT0dh6WfmhjIVNzdIE
+        neaKIOiT+bKtvZyzs/O6q/t5tmzfanTgt+vedj0/dm52GF0Owkk0Nwg/08TGwsuJ8egKGoWfE5LA8Az+
+        9arU5UDwDUjgYgPBOCr0yfT8d0y++IyHnOdf0B5IwbRska6uJbjOEN2LaB/coH4F/qHXXLCP+e9MC8FE
+        LAXdtKAbFjSClzXDRLNnEWXdFGiaCWfnB9h2Bf23X1YFfLDJ8OBZCiqVVCqpmiGKpXItVQNKDUfnAiz6
+        Zb7AFBe0MN/gFCzbxviTDcglndBEOk+9R5Fmx+kFFBRtj6aT72CYNvpuxriglV28FYNBxlj8G+5HP2Es
+        ui6Q/EnkimVI15MYjaxhJLIuUrq2Ck230HvjKRfsZ3zg9z1KhWxeRbZQQoaSnZhHJlcCOz6HdF5BOkf8
+        VMCOzYnbPN8fqQrOXY2IBd0Lr2GHCrvETrZarOYstim3szK2MkWwowkotJuzvjAXHGA9NJRoacOPkthK
+        F/GDk5HBOt5S0gHKzXQBm7tFSnrvnhG78V4KccFB5u0LQVZ1PH71FcHQao0VSJeXUaCidOUj2BH603Dc
+        cUi+JeSVMrovTHJBG+ND/Zb5l3vIf8hxaKm/6eqdqArcnruJDu8IGsXtGZolQSshXtqIQ3Uc/gu8w885
+        GD0X/wHYL4e9n9h2JaHBAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnDomicilios.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAATdEVYdFRpdGxlAFppcENvZGU7Q29kZTtJsi+oAAAF
+        pklEQVRYR8WX+XONdxjFU9101E63nyshqKjoH1JVVa1aat9LdUyNVkOHJExWsu9LY0siFLUkV1NMtRhS
+        lFpqSSKR3DXJzaXz9Jzn+773XhkzLTMw85ln+b7fc477Im6EiDxTHrp8mvDXc6AXeP4pQ09669Ab9AGv
+        9qDvY9LvP6D2K+AFENF7c47DkZz/izwx8gxJJL8etV4SM2uPWiEi+vCh7sA/EgjcV+ye1cDepuf8aPgt
+        Nuf8zD8A/LQi+poA98XbGRBfR0C8YTww4zz8zNvRHew91mwqZh+xZtbg3C3+7vuSmHWUAfozQL9gAOuy
+        Fw8b0QcNbAHTm3PdoXfbZzobuAvH40UF/u57Ep/pYIABGiApt14/lvDLDZfbZI/jb4vrUoNaw1p3XdJr
+        zpjnIGaLpleflvFLSuW9xaUyniwqldhFJaBU0qpP4Rm/uHwAlQE2bDnCAAMZoD/fBz8WO+m5S21qZLgm
+        u2uvSzVqdS37a2qQBkM+S0H2sQthuBCGSrGMIwuKJRawpladEpcHATxd0uW/J9+nHQoFSMxymABMCWhE
+        2D8MGsQuKNHeCcYtKFKc3i5xwoDQzO7fnVcIcI5du9svnQgQl3qQAQYxwID4jDpNpQkhUnnkqlQevqJ9
+        UIxmlui4+UUqqgZuGMwtlLHACXHu2q19u0XM7AIZC+yZAdYmHQgF2LilVgOoAR7YeeiK7Dx4xYhQsEcd
+        OxeCcwqDgjFzCtTEntvcnWF0yZhZeRID2lzmrLMrIGs27WOAwRpgffphTWUud8m2A39Jxf7L2ofolHZL
+        IGZ2vowBbS5jMubzPOUuDbG7S6yevDMzV9E96ECA1fF7gwEGxqUcRICAivFC+Y+XpHzfJRXhBSPaERSn
+        mRHs0FkNZpi5FXMrqxPPOnEORk/LBjnYcd+hAVZtqAkF4Pvg0k544myTlOz5E1yUkpqLUgyKai5I0W7D
+        6Ok5klB+whLsRH9cRsEkr/K8kkt2/SG5OxskZ1eDjJqaJRvLjklLuw8wQLesXF/NAEMYYNA3eB8awEp4
+        /EyjFFZfkMIqQ0HVeSmovGAM0I/6LEsSfzghLU6fPp+IMCOnZkoODLO3G7LItgbJBNGfZEpC2XEToM0n
+        vs5uWRFXGQqwOmEvlgF9oBXo72LX+WBiU31yx+qjYTby00xr55ORMKAJ+yAwMtUr0VO2yoiPt5odZi8C
+        LFu7gwGGMsDgVRt2ayr7sv07MRcssG+2BKKnZCicyQjLoBlnZscaYvjkLUrTXcyAARav2R4KsHJ9lS4p
+        zguZFecko+Ks9vaOF1mbgBE0hpxHTE43BpzxnMETrMMnpUsUMDsPfrb4ZeHXFQzwGgMMWfFdJZbdakKR
+        tLIzin3BEBKN+giCoNE6i5qUpjS2enXX2ArsCiI/TJWoiTx3y23MHgSYt6o8FGDZtzs0FcV4MaX4tCSD
+        JkuAaG+JRgYNrRnihD0NaGTOaOiWyA9SQKqe3W5xa4A5X5UxwOsMMHQJ3geXtuBPx65JUuHvsrkAoG5i
+        BZvyfpNEEDkxVdblOyBGQQ/6ozIMJsNgYmoYE1Lk7QnJsi6vTm7B/FaLCz/E/DLry5JQAL4PD5ZMa4vu
+        r78qCXknJSHX5leJzwHZJyUuz6FCRtCIxuU6LDNjOuz9ZGDM43JhfsclN/HsTVQGmLm8mAHe0AB8HwxA
+        sdt3IKjAgNhG2PGyfXYzWEO9/Qxnrc32ueEGZ+D2dcn0ZYWhAHwfXNoXQ8KGnrMNBW+w6uxUce3Da7Mz
+        DM4u/Sk7bWkowBC+DwZw44DVZfVarZmXgnur1/qYTFtawAD6t6Df1MXZdTOXF8kMvBetX7C3KuDH9QC4
+        bFcKPQ5T5mc44K3/J3yJIQD/VeKfSn4s/5c3H4G3LNjTh+YvA/2KxG8oLwKGeVLQzIYzPXvZXxD5He1Z
+        8Ky/HUvEvynFkqiPC+j6AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="SkinForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

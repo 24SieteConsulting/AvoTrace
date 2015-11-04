@@ -32,5 +32,11 @@ namespace Empacadoras
             FrmConexion.DefInstance.MdiParent = this;
             FrmConexion.DefInstance.Show();
         }
+
+        private void btnDomicilios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmDomicilios.DefInstance.MdiParent = this;
+            FrmDomicilios.DefInstance.Show();
+        }
     }
 }

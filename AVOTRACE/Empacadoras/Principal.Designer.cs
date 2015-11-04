@@ -44,6 +44,7 @@
             this.btnHuertas = new DevExpress.XtraBars.BarButtonItem();
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsumos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDomicilios = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,9 +74,10 @@
             this.btnProductos,
             this.btnHuertas,
             this.btnClientes,
-            this.btnInsumos});
+            this.btnInsumos,
+            this.btnDomicilios});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -191,6 +193,16 @@
             this.btnInsumos.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnInsumos.LargeGlyph")));
             this.btnInsumos.Name = "btnInsumos";
             // 
+            // btnDomicilios
+            // 
+            this.btnDomicilios.Caption = "Domicilios";
+            this.btnDomicilios.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnDomicilios.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDomicilios.Glyph")));
+            this.btnDomicilios.Id = 15;
+            this.btnDomicilios.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDomicilios.LargeGlyph")));
+            this.btnDomicilios.Name = "btnDomicilios";
+            this.btnDomicilios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDomicilios_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -219,8 +231,10 @@
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
             this.ribbonPageGroup3.ItemLinks.Add(this.btnEmpresa);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDomicilios);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnEmpleados);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Empresa";
             // 
             // ribbonPageGroup1
@@ -230,6 +244,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPermisos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUsuarios);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Roles y Seguridad";
             // 
             // ribbonPageGroup4
@@ -240,6 +255,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnHuertas);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnInsumos);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.ShowCaptionButton = false;
             this.ribbonPageGroup4.Text = "Productos";
             // 
             // ribbonPageGroup5
@@ -247,6 +263,7 @@
             this.ribbonPageGroup5.AllowTextClipping = false;
             this.ribbonPageGroup5.ItemLinks.Add(this.btnClientes);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "Clientes";
             // 
             // SkinForm
@@ -301,6 +318,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnInsumos;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnDomicilios;
     }
 }
 

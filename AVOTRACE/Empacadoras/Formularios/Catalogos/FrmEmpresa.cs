@@ -57,8 +57,8 @@ namespace Empacadoras
         {
             Estado LEstado = new Estado();
             cmbEstado.DataSource = LEstado.ListarEstados();
-            cmbEstado.ValueMember = "EstadosId";
-            cmbEstado.DisplayMember = "EstadosNombre";
+            cmbEstado.ValueMember = "EstadoId";
+            cmbEstado.DisplayMember = "EstadoNombre";
         }
         private void CargarEmpresa()
         {
@@ -98,6 +98,7 @@ namespace Empacadoras
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             int vEmpresaId = 1;
             string vEmpresaNombre = txtEmpresaNombre.Text;
             string vEmpresaFiscal = txtEmpresaFiscal.Text;

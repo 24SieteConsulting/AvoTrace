@@ -188,28 +188,28 @@
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(502, 22);
+            this.barDockControl1.Size = new System.Drawing.Size(494, 24);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 377);
-            this.barDockControl2.Size = new System.Drawing.Size(502, 23);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 374);
+            this.barDockControl2.Size = new System.Drawing.Size(494, 22);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 22);
-            this.barDockControl3.Size = new System.Drawing.Size(0, 355);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 24);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 350);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(502, 22);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 355);
+            this.barDockControl4.Location = new System.Drawing.Point(494, 24);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 350);
             // 
             // barButtonItem4
             // 
@@ -271,9 +271,9 @@
             this.panelControl1.Controls.Add(this.txtEmpresaId);
             this.panelControl1.Controls.Add(this.txtEmpresaNombre);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 22);
+            this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(502, 355);
+            this.panelControl1.Size = new System.Drawing.Size(494, 350);
             this.panelControl1.TabIndex = 8;
             // 
             // txtCiudad
@@ -491,7 +491,7 @@
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 400);
+            this.ClientSize = new System.Drawing.Size(494, 396);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
