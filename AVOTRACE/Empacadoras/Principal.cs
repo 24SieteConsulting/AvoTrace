@@ -38,5 +38,11 @@ namespace Empacadoras
             FrmDomicilios.DefInstance.MdiParent = this;
             FrmDomicilios.DefInstance.Show();
         }
+
+        private void btnEmpleados_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmBase.DefInstance.MdiParent = this;
+            FrmBase.DefInstance.Show();
+        }
     }
 }

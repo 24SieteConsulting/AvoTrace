@@ -77,6 +77,12 @@
     <Compile Include="Clases\MSRegistro.cs" />
     <Compile Include="Clases\Sucursales.cs" />
     <Compile Include="Clases\Validar_Campos.cs" />
+    <Compile Include="Formularios\Catalogos\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\FrmBuscarMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Catalogos\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\FrmBuscarMunicipio.resx">
       <DependentUpon>FrmBuscarMunicipio.cs</DependentUpon>
     </EmbeddedResource>

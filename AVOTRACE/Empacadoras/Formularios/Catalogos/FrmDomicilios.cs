@@ -76,14 +76,14 @@ namespace Empacadoras
             lookMunicipioPais.Properties.NullText = "Seleciona Un Pais";
             lookMunicipioPais.EditValue = null;
         }
-        private void CargarLookPais()
+        private void CargarLookPais(int valor)
         {
             Domicilios dom = new Domicilios();
-            lookEstadoPais.Properties.DataSource = dom.Listar_Pais();
             lookEstadoPais.Properties.DisplayMember = "PaisNombre";
             lookEstadoPais.Properties.ValueMember = "PaisId";
             lookEstadoPais.Properties.NullText = "Seleciona Un Pais";
-            lookEstadoPais.EditValue = null;
+            lookEstadoPais.EditValue = valor;
+            lookEstadoPais.Properties.DataSource = dom.Listar_Pais();
         }
         private void CargarLookMunicipioEstado()
         {
@@ -150,7 +150,7 @@ namespace Empacadoras
             BloquearObjetosEstados(false);
             BloquearObjetosMunicipios(false);
             BloquearObjetosLocalidad(false);
-            CargarLookPais();
+            CargarLookPais(1);
             CargarLookMunicipioPais();
 
             CargarIconos();
@@ -390,7 +390,9 @@ namespace Empacadoras
             if(tb.Rows.Count>0)
             {
                 txtEstadoNombre.Text = tb.Rows[0][1].ToString();
-                lookEstadoPais.EditValue = null;
+                lookEstadoPais.Properties.DataSource = null;
+                CargarLookPais(2);
+                lookEstadoPais.EditValue = 1;
             }
         }
         private void dtgDetallesMunicipio_DoubleClick(object sender, EventArgs e)

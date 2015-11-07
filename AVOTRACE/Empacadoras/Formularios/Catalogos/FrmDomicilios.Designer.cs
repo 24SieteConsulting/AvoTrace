@@ -257,28 +257,28 @@
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(447, 24);
+            this.barDockControl1.Size = new System.Drawing.Size(435, 24);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 409);
-            this.barDockControl2.Size = new System.Drawing.Size(447, 22);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 403);
+            this.barDockControl2.Size = new System.Drawing.Size(435, 22);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 24);
-            this.barDockControl3.Size = new System.Drawing.Size(0, 385);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 379);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(447, 24);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 385);
+            this.barDockControl4.Location = new System.Drawing.Point(435, 24);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 379);
             // 
             // barButtonItem4
             // 
@@ -316,7 +316,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(447, 385);
+            this.panelControl1.Size = new System.Drawing.Size(435, 379);
             this.panelControl1.TabIndex = 5;
             // 
             // TabControl
@@ -330,7 +330,7 @@
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedTabPage = this.TabPais;
-            this.TabControl.Size = new System.Drawing.Size(423, 361);
+            this.TabControl.Size = new System.Drawing.Size(411, 355);
             this.TabControl.TabIndex = 0;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabPais,
@@ -346,7 +346,7 @@
             this.TabPais.Controls.Add(this.panelControl2);
             this.TabPais.Name = "TabPais";
             this.TabPais.Padding = new System.Windows.Forms.Padding(10);
-            this.TabPais.Size = new System.Drawing.Size(421, 334);
+            this.TabPais.Size = new System.Drawing.Size(409, 322);
             this.TabPais.Text = "Pais";
             // 
             // panelControl4
@@ -356,7 +356,7 @@
             this.panelControl4.Location = new System.Drawing.Point(10, 203);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl4.Size = new System.Drawing.Size(401, 121);
+            this.panelControl4.Size = new System.Drawing.Size(389, 109);
             this.panelControl4.TabIndex = 10;
             // 
             // dtgDetallesPais
@@ -366,7 +366,7 @@
             this.dtgDetallesPais.MainView = this.dtgPaisValores;
             this.dtgDetallesPais.MenuManager = this.barManager1;
             this.dtgDetallesPais.Name = "dtgDetallesPais";
-            this.dtgDetallesPais.Size = new System.Drawing.Size(377, 97);
+            this.dtgDetallesPais.Size = new System.Drawing.Size(365, 85);
             this.dtgDetallesPais.TabIndex = 0;
             this.dtgDetallesPais.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgPaisValores});
@@ -393,7 +393,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(10, 145);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(401, 58);
+            this.panelControl3.Size = new System.Drawing.Size(389, 58);
             this.panelControl3.TabIndex = 9;
             // 
             // labelControl5
@@ -426,7 +426,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(10, 10);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(401, 135);
+            this.panelControl2.Size = new System.Drawing.Size(389, 135);
             this.panelControl2.TabIndex = 8;
             // 
             // labelControl4
@@ -501,7 +501,7 @@
             this.TabEstado.Controls.Add(this.panelControl7);
             this.TabEstado.Name = "TabEstado";
             this.TabEstado.Padding = new System.Windows.Forms.Padding(10);
-            this.TabEstado.Size = new System.Drawing.Size(421, 334);
+            this.TabEstado.Size = new System.Drawing.Size(409, 322);
             this.TabEstado.Text = "Estado";
             // 
             // panelControl5
@@ -511,7 +511,7 @@
             this.panelControl5.Location = new System.Drawing.Point(10, 203);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl5.Size = new System.Drawing.Size(401, 121);
+            this.panelControl5.Size = new System.Drawing.Size(389, 109);
             this.panelControl5.TabIndex = 13;
             // 
             // dtgDetallesEstado
@@ -521,7 +521,7 @@
             this.dtgDetallesEstado.MainView = this.dtgEstadosValores;
             this.dtgDetallesEstado.MenuManager = this.barManager1;
             this.dtgDetallesEstado.Name = "dtgDetallesEstado";
-            this.dtgDetallesEstado.Size = new System.Drawing.Size(377, 97);
+            this.dtgDetallesEstado.Size = new System.Drawing.Size(365, 85);
             this.dtgDetallesEstado.TabIndex = 1;
             this.dtgDetallesEstado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgEstadosValores});
@@ -548,7 +548,7 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl6.Location = new System.Drawing.Point(10, 145);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(401, 58);
+            this.panelControl6.Size = new System.Drawing.Size(389, 58);
             this.panelControl6.TabIndex = 12;
             // 
             // labelControl6
@@ -579,7 +579,7 @@
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl7.Location = new System.Drawing.Point(10, 10);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(401, 135);
+            this.panelControl7.Size = new System.Drawing.Size(389, 135);
             this.panelControl7.TabIndex = 11;
             // 
             // lookEstadoPais
@@ -641,7 +641,7 @@
             this.TabMunicipio.Controls.Add(this.panelControl10);
             this.TabMunicipio.Name = "TabMunicipio";
             this.TabMunicipio.Padding = new System.Windows.Forms.Padding(10);
-            this.TabMunicipio.Size = new System.Drawing.Size(421, 334);
+            this.TabMunicipio.Size = new System.Drawing.Size(409, 322);
             this.TabMunicipio.Text = "Municipio";
             // 
             // panelControl8
@@ -651,7 +651,7 @@
             this.panelControl8.Location = new System.Drawing.Point(10, 203);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl8.Size = new System.Drawing.Size(401, 121);
+            this.panelControl8.Size = new System.Drawing.Size(389, 109);
             this.panelControl8.TabIndex = 16;
             // 
             // dtgDetallesMunicipio
@@ -661,7 +661,7 @@
             this.dtgDetallesMunicipio.MainView = this.dtgMunicipioValores;
             this.dtgDetallesMunicipio.MenuManager = this.barManager1;
             this.dtgDetallesMunicipio.Name = "dtgDetallesMunicipio";
-            this.dtgDetallesMunicipio.Size = new System.Drawing.Size(377, 97);
+            this.dtgDetallesMunicipio.Size = new System.Drawing.Size(365, 85);
             this.dtgDetallesMunicipio.TabIndex = 1;
             this.dtgDetallesMunicipio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgMunicipioValores});
@@ -688,7 +688,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl9.Location = new System.Drawing.Point(10, 145);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(401, 58);
+            this.panelControl9.Size = new System.Drawing.Size(389, 58);
             this.panelControl9.TabIndex = 15;
             // 
             // labelControl10
@@ -721,7 +721,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(10, 10);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(401, 135);
+            this.panelControl10.Size = new System.Drawing.Size(389, 135);
             this.panelControl10.TabIndex = 14;
             // 
             // lookMunicipioEstado
@@ -801,7 +801,7 @@
             this.TabLocalidad.Controls.Add(this.panelControl13);
             this.TabLocalidad.Name = "TabLocalidad";
             this.TabLocalidad.Padding = new System.Windows.Forms.Padding(10);
-            this.TabLocalidad.Size = new System.Drawing.Size(421, 334);
+            this.TabLocalidad.Size = new System.Drawing.Size(409, 322);
             this.TabLocalidad.Text = "Localidad";
             // 
             // panelControl11
@@ -811,7 +811,7 @@
             this.panelControl11.Location = new System.Drawing.Point(10, 203);
             this.panelControl11.Name = "panelControl11";
             this.panelControl11.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl11.Size = new System.Drawing.Size(401, 121);
+            this.panelControl11.Size = new System.Drawing.Size(389, 109);
             this.panelControl11.TabIndex = 19;
             // 
             // dtgDetallesLocalidad
@@ -821,7 +821,7 @@
             this.dtgDetallesLocalidad.MainView = this.dtgLocalidadValores;
             this.dtgDetallesLocalidad.MenuManager = this.barManager1;
             this.dtgDetallesLocalidad.Name = "dtgDetallesLocalidad";
-            this.dtgDetallesLocalidad.Size = new System.Drawing.Size(377, 97);
+            this.dtgDetallesLocalidad.Size = new System.Drawing.Size(365, 85);
             this.dtgDetallesLocalidad.TabIndex = 2;
             this.dtgDetallesLocalidad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgLocalidadValores});
@@ -848,7 +848,7 @@
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl12.Location = new System.Drawing.Point(10, 145);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(401, 58);
+            this.panelControl12.Size = new System.Drawing.Size(389, 58);
             this.panelControl12.TabIndex = 18;
             // 
             // labelControl14
@@ -882,7 +882,7 @@
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl13.Location = new System.Drawing.Point(10, 10);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(401, 135);
+            this.panelControl13.Size = new System.Drawing.Size(389, 135);
             this.panelControl13.TabIndex = 17;
             // 
             // txtLocalidadMunucipioNombre
@@ -972,7 +972,7 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 431);
+            this.ClientSize = new System.Drawing.Size(435, 425);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
