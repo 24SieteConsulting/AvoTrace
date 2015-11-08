@@ -1,10 +1,24 @@
 
 use Avotrace
-GO
-IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlInventarioSeleccion') 
+
+
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlOrdenInvBodegaGenerico') 
 BEGIN
-  DROP TABLE CtrlInventarioSeleccion
+  DROP TABLE CtrlOrdenInvBodegaGenerico
 END
+
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlInvBodegaGenerico') 
+BEGIN
+  DROP TABLE CtrlInvBodegaGenerico
+END
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatIngresoEmpaque') 
+BEGIN
+  DROP TABLE CatIngresoEmpaque
+END
+
+GO
 GO
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlEntidadEstatus') 
 BEGIN
@@ -161,6 +175,14 @@ BEGIN
   DROP TABLE CtrlInventarioCajasCorteOrden
 END
 GO
+
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlLoteOrdenCorte') 
+BEGIN
+  DROP TABLE CtrlLoteOrdenCorte
+END
+
+GO
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlLote') 
 BEGIN
   DROP TABLE CtrlLote
@@ -268,12 +290,21 @@ BEGIN
   DROP TABLE CatMaquinaSeleccionadora
 END
 GO
-IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatBodegaSeleccion') 
+GO
+
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatBodegaGenerica') 
 BEGIN
-  DROP TABLE CatBodegaSeleccion
+  DROP TABLE CatBodegaGenerica
 END
 GO
-CREATE TABLE  CatTipoBeneficiario(  /*Intermediario,Casa,Normal*/
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatTipoBodegaGenerica') 
+BEGIN
+  DROP TABLE CatTipoBodegaGenerica
+END
+GO
+
+GO
+	CREATE TABLE  CatTipoBeneficiario(  /*Intermediario,Casa,Normal*/
 IdTipoBeneficiario  int PRIMARY KEY,
 TipoBeneficiario     VARCHAR(50) 
 )
@@ -425,7 +456,7 @@ ADD FOREIGN KEY (IdEmpresaTransportista)
 REFERENCES CatEmpresaTransportista(IdEmpresaTransportista)
 
 GO
-CREATE TABLE CatProceso(     /*(Acuerdo,orden,preenvio etc.)*/
+CREATE TABLE CatProceso(     /*(Acuerdo,orden,preenvio etc,IdgresoEmpaque.)*/
 IdProceso   int PRIMARY KEY,
 Proceso VARCHAR(50)
 )
@@ -729,6 +760,10 @@ CREATE TABLE CtrlPrecioDirigidoDetalle(
 /*almacena la relación de si es dirigido, cuales calibres o rangos(los rengos se 
 manejará como un solo elemento que en el catálogo de precios)seleccionaron para ir 
 dirigido o si es parejo el elemento "figticio" de 0 a 7 kgs.
+
+!! Importante, despues de leer este texto desechalo de tu cabeza el corte dirigido aún cuando es por rango se seleccionará un grupo de n elementos de gramos para formar el 
+rango deseado, esto por que tiene que haber una correspondencia entre los calibres comerciales finales. y para no tener un quebradero de cabeza cuando se conviertan a los calibres
+que mencionan para los diferentes países.
 */
 IdPrecioDirigidoDetalle    int PRIMARY KEY,
 IdPrecioDetalle int   NOT NULL ,
@@ -760,13 +795,17 @@ ADD FOREIGN KEY (IdMercadoDestino)
 REFERENCES CatMercadoDestino(IdMercadoDestino)
 
 GO
+--CREATE TABLE  CatConcepto(
 
 CREATE TABLE  CatConcepto(
 /*En primera instancia servirá para almacenar los conceptos de inventario,
  es decir, "Entrada por Compra de cajas", "Entrada por reparacion de cajas", "Salida para camión según orden"*/
 IdConcepto  int PRIMARY KEY,
 IdProceso int   NOT NULL,
-Concepto varchar(50) not null
+Concepto varchar(50) not null,
+Idcuenta int not null,
+IdSubCuenta int not null,
+IdSubSubCuent int not null
 )
 GO
 ALTER TABLE CatConcepto
@@ -856,10 +895,8 @@ CREATE TABLE CatMaquinaSeleccionadora(
 idMaquinaSeleccionadora   int PRIMARY KEY,
 MaquinaSeleccionadora varchar(50))
 GO
-
 CREATE TABLE CtrlLote(
 IdLote  int PRIMARY KEY,
-IdOrdenCorte int   NOT NULL ,
 idMaquinaSeleccionadora int   NOT NULL ,
 FechaHoraCorridaFijada datetime,
 FechaHoraCorridaReal datetime,
@@ -867,35 +904,153 @@ FechaHoraCorridaReal datetime,
 )
 go
 ALTER TABLE CtrlLote
-ADD FOREIGN KEY (IdOrdenCorte)
-REFERENCES CtrlOrdenCorte(IdOrdenCorte)
-go
-ALTER TABLE CtrlLote
 ADD FOREIGN KEY (idMaquinaSeleccionadora)
 REFERENCES CatMaquinaSeleccionadora(idMaquinaSeleccionadora)
+GO
+CREATE TABLE CtrlLoteOrdenCorte(
+/*Como n ordenes se pueden correr en un solo lote, aquí es donde se dice esta y esta y esta orden se correrán en este lote*/
+IdLoteOrdenCorte  int PRIMARY KEY,
+IdLote int not null,
+IdOrdenCorte int not null
+)
 go
-CREATE TABLE CatBodegaSeleccion(
-/*Cuando terminemos de seleccionar la fruta meteremos la bodega a una bodega*/
-idBodegaSeleccion   int PRIMARY KEY,
-BodegaSeleccion varchar(50),
+ALTER TABLE CtrlLoteOrdenCorte
+ADD FOREIGN KEY (IdLote)
+REFERENCES CtrlLote(IdLote)
+go
+ALTER TABLE CtrlLoteOrdenCorte
+ADD FOREIGN KEY (IdOrdenCorte)
+REFERENCES CtrlOrdenCorte(IdOrdenCorte)
+
+GO
+
+GO
+CREATE TABLE CatIngresoEmpaque(
+IdgresoEmpaque   int PRIMARY KEY,
+idOrdenCorte int not null,
+--PesoFruta decimal(15,2) not null,
+HoraIngreso datetime  not null,
+Observaciones varchar(2000),
+/*Llevará status conel esquema global*/
+)
+GO
+ALTER TABLE CatIngresoEmpaque
+ADD FOREIGN KEY (idOrdenCorte)
+REFERENCES CtrlOrdenCorte(idOrdenCorte)
+GO
+CREATE TABLE CatTipoBodegaGenerica(
+/*3 tipo de bodega cuarentena, de selección y de envío*/
+idTipoBodegaGenerica   int PRIMARY KEY,
+TipoBodegaGenerica varchar(50),
+)
+go
+CREATE TABLE CatBodegaGenerica(
+/*existen 3 tipo de bodega cuarentena, de selección y de envío, se llevará un mecanismo genérico de inventario por n bodegas*/
+idBodegaGenerica   int PRIMARY KEY,
+idTipoBodegaGenerica int not null,
+BodegaGenerica varchar(50),
 CapacidadKgs decimal(15,2)
 )
 GO
----create table CtrlInventarioSeleccion()
-CREATE TABLE CtrlInventarioSeleccion(
-IdInventarioSeleccion  int PRIMARY KEY,
-idBodegaSeleccion int not null,
+ALTER TABLE CatBodegaGenerica
+ADD FOREIGN KEY (idTipoBodegaGenerica)
+REFERENCES CatTipoBodegaGenerica(idTipoBodegaGenerica)
+GO
+
+GO
+CREATE TABLE CtrlInvBodegaGenerico(
+IdInvBodegaGenerico  int PRIMARY KEY,
+idBodegaGenerica int not null,
 KgEntrada  decimal(15,2),
 KgSalida  decimal(15,2),
-IdLote int /* es posible poner null*/
-)
-
-
-
+IdConcepto int not null,
+IdCuentaContable int not null,
+Fecha datetime not null,
+EntraDineroEmpaque decimal(15,2) not null,
+SaleDineroEmpaque decimal(15,2) not null,
+IdPrecioDetalle  int null /*Este elemento es el que indica el tipo de fruta.*/
 /*
-Premisas del diagrama entidad Relacion
---
+Manejo de inventario:
+Pago en báscula:
+     Inventario en bodegaCuarentenaria:
+	     MarcadoPago en Bascula    
+			 Parejo:
+			   Entrada:
+			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
+			     En base al peso de la fruta se inserta el idPrecioDetalle y en concepto EntraDineroEmpaque se pone la cantidad total de dinero que
+				 "Entró"(qeu se pagará al beneficiario), se agregan los kilos en KgEntrada idConcepto (Compras crédito)/Compras Contado
+			   Salida:
+			      Se establece la misma cantidad de entrada el idPrecioDetalle y idConcepto(Paso a Maquina seleccionadora)
+			 Dirigido
+			    Entrada
+			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
+				Como el rango dirigido se formó en base a varios detalles(gramos) se considera que toda la fruta está en este rango(para pagar establecer la cantidad de pago de inmediato)
+				idBodegaGenerica=bodega de cuarentena KgEntrada=(El total del peso del camión) idconcepto= (Compras crédito)/Compras Contado, 
+				de la tabla CatCaracteristicasPesoFacturacion se determina si el total se promedia entre los diferentes calibres que conforman el ranto o todo se carga al calibre mas alto o al mas bajo
+				o defitivamente se captura
+			 EnBanda
+			   Entrada
+			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
+				Debió estar marcado en  CatCaracteristicasPesoFacturacion que en banda y se determina que 
+				tabla CatCaracteristicasPesoFacturacion se determina si el total se promedia entre los diferentes calibres que conforman el ranto o todo se carga al calibre mas alto o al mas bajo
+				o defitivamente se captura
 
+
+	     MarcadoPago en banda
+		   Parejo,Dirigido,EnBanda: todo se mete como un solo concepto, esto solo para tener un número, finalmente como se especifica en PrecioCabecera el peso que vale es en banda y no en 
+		   bascula
+
+
+     Inventario en bodegaSelección:
+	     MarcadoPago en Bascula    (Se seleccionó esta opción, pero también todos pasan por la misma cantidad de bodegas.)
+			 Parejo:
+			   Entrada:
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
+				  se realiza una entrada ala bodega de selección con la cantidad que se recopiló en la banda
+			 Dirigido
+			    Entrada
+			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad de cada idPrecioDetalle capturado
+				  se realiza una entrada ala bodega de selección con la cantidad que se recopiló en la banda
+
+			 EnBanda
+			   Entrada
+			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad de cada idPrecioDetalle capturado
+				  se realiza una entrada ala bodega de selección con la cantidad que se recopiló en la banda
+
+	     MarcadoPago en BAnda
+			 Parejo: 
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
+				  se realiza una entrada ala bodega de selección con la cantidad que se recopiló en la banda
+			 Dirigido
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
+			      como se selecciona un rango(compuesto por varios pesos y calibres, donde todos ellos tienen el mismo precio) se inserta el peso que le corresponde a cada calibre
+				  de acuerdo con la selección de la banda y el resto de los calibres se reliza un concepto ajuste, es decir según se capturó en banda, solo que se establece un concepto de ajuste
+				  contable aumento o disminución de dinero para que se pague idéntico
+			Banda
+			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
+			     Sin problema alguno
 
 */
 
+)
+GO
+ALTER TABLE CtrlInvBodegaGenerico
+ADD FOREIGN KEY (idBodegaGenerica)
+REFERENCES CatBodegaGenerica(idBodegaGenerica)
+
+GO
+ALTER TABLE CtrlInvBodegaGenerico
+ADD FOREIGN KEY (IdConcepto)
+REFERENCES CatConcepto(IdConcepto)
+GO
+CREATE TABLE CtrlOrdenInvBodegaGenerico( 
+IdOrdenInvBodegaGenerico  int PRIMARY KEY,
+IdInvBodegaGenerico int not null,
+IdOrden int not null
+)
+GO
+ALTER TABLE CtrlOrdenInvBodegaGenerico
+ADD FOREIGn KEY (IdInvBodegaGenerico)
+REFERENCES CtrlInvBodegaGenerico (IdInvBodegaGenerico)
