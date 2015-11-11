@@ -402,9 +402,36 @@ Homoclave   VARCHAR(50)
 
 GO
 
-CREATE TABLE  CatPais(
-IdPais int PRIMARY KEY,
-Pais VARCHAR(50) )
+GO
+
+/****** Object:  Table [dbo].[CatPais]    Script Date: 2015/11/10 11:34:03 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[CatPais](
+	[IdPais] [int] NOT NULL,
+	[Pais] [varchar](50) NOT NULL,
+	[PaisCode] [varchar](2) NOT NULL,
+	[PaisIsoCode] [varchar](3) NOT NULL,
+ CONSTRAINT [PK__CatPais__FC850A7BC6A75AA9] PRIMARY KEY CLUSTERED 
+(
+	[IdPais] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
 GO
 CREATE TABLE  CatEntidadFederativa(
 IdEntidadFederativa int PRIMARY KEY,
