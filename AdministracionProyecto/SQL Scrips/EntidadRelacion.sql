@@ -1,7 +1,440 @@
+Use Avotrace
+GO
 
-use Avotrace
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlLote_CtrlOrdenCorteCtrlAcuerdo_Lote') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorteCtrlAcuerdo  DROP CONSTRAINT FKCtrlLote_CtrlOrdenCorteCtrlAcuerdo_Lote
+END
+GO
+
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenCorteCtrlAcuerdo_CtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorteCtrlAcuerdo  DROP CONSTRAINT FKCtrlOrdenCorteCtrlAcuerdo_CtrlOrdenCorte
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenCorteCtrlAcuerdo_CtrlAcuerdo') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorteCtrlAcuerdo  DROP CONSTRAINT FKCtrlOrdenCorteCtrlAcuerdo_CtrlAcuerdo
+END
+
+go
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatResponsableCuadrillaCatEmpresaCosechadora') )
+BEGIN
+   ALTER TABLE CatResponsableCuadrilla  DROP CONSTRAINT FKCatResponsableCuadrillaCatEmpresaCosechadora
+END
+go
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenCorteCtrlAcuerdo') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorte  DROP CONSTRAINT FKCtrlOrdenCorteCtrlAcuerdo
+END
+
+go
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenInvBodegaGenericoCtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CtrlOrdenInvBodegaGenerico  DROP CONSTRAINT FKCtrlOrdenInvBodegaGenericoCtrlOrdenCorte
+END
 
 
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInvBodegaGenericoCatCuentaContable') )
+BEGIN
+   ALTER TABLE CtrlInvBodegaGenerico  DROP CONSTRAINT FKCtrlInvBodegaGenericoCatCuentaContable
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatVehiculoCatEmpresaTransportista') )
+BEGIN
+   ALTER TABLE CatVehiculo  DROP CONSTRAINT FKCatVehiculoCatEmpresaTransportista
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatEntidadFederativaCatPais') )
+BEGIN
+   ALTER TABLE CatEntidadFederativa  DROP CONSTRAINT FKCatEntidadFederativaCatPais
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatMunicipioCatEntidadFederativa') )
+BEGIN
+   ALTER TABLE CatMunicipio  DROP CONSTRAINT FKCatMunicipioCatEntidadFederativa
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatMunicipioCatEntidadFederativa') )
+BEGIN
+   ALTER TABLE CatMunicipio  DROP CONSTRAINT FKCatMunicipioCatEntidadFederativa
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatLocalidadCatMunicipio') )
+BEGIN
+   ALTER TABLE CatLocalidad  DROP CONSTRAINT FKCatLocalidadCatMunicipio
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenCorteCatEmpresaCosechadora') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorte  DROP CONSTRAINT FKCtrlOrdenCorteCatEmpresaCosechadora
+END
+
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenCorteCatEmpresaTransportista') )
+BEGIN
+   ALTER TABLE CtrlOrdenCorte  DROP CONSTRAINT FKCtrlOrdenCorteCatEmpresaTransportista
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatDocumentacionProcesoCatDocumentacion') )
+BEGIN
+   ALTER TABLE CatDocumentacionProceso  DROP CONSTRAINT FKCatDocumentacionProcesoCatDocumentacion
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatHuertaCatLocalidad') )
+BEGIN
+   ALTER TABLE CatHuerta  DROP CONSTRAINT FKCatHuertaCatLocalidad
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraCatClaseFruta') )
+BEGIN
+   ALTER TABLE CatFrutaCabecera  DROP CONSTRAINT FKCatFrutaCabeceraCatClaseFruta
+END
+GO
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraCatFloracion') )
+BEGIN
+   ALTER TABLE CatFrutaCabecera  DROP CONSTRAINT FKCatFrutaCabeceraCatFloracion
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraCatTipoCultivo') )
+BEGIN
+   ALTER TABLE CatFrutaCabecera  DROP CONSTRAINT FKCatFrutaCabeceraCatTipoCultivo
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraCatTipoCultivo') )
+BEGIN
+   ALTER TABLE CatFrutaCabecera  DROP CONSTRAINT FKCatFrutaCabeceraCatTipoCultivo
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraCatTipoCultivo') )
+BEGIN
+   ALTER TABLE CtrlProdHuerta  DROP CONSTRAINT FKCtrlProdHuertaCatHuerta
+END
+go
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlProdHuertaCatProductor') )
+BEGIN
+   ALTER TABLE CtrlProdHuerta  DROP CONSTRAINT FKCtrlProdHuertaCatProductor
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatDomicilioCatTipoDomicilio') )
+BEGIN
+   ALTER TABLE CatDomicilio  DROP CONSTRAINT FKCatDomicilioCatTipoDomicilio
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatDomicilioCatLocalidad') )
+BEGIN
+   ALTER TABLE CatDomicilio  DROP CONSTRAINT FKCatDomicilioCatLocalidad
+END
+------------------------------------------------------------
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlEntidadDomicilioCatProceso') )
+BEGIN
+   ALTER TABLE CtrlEntidadDomicilio  DROP CONSTRAINT FKCtrlEntidadDomicilioCatProceso
+END
+go
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlEntidadDomicilioCatDomicilio') )
+BEGIN
+   ALTER TABLE CtrlEntidadDomicilio  DROP CONSTRAINT FKCtrlEntidadDomicilioCatDomicilio
+END
+GO
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlEntidadDocumentacionCatDocumentacionProceso') )
+BEGIN
+   ALTER TABLE CtrlEntidadDocumentacion  DROP CONSTRAINT FKCtrlEntidadDocumentacionCatDocumentacionProceso
+END
+GO
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlCertificacionesHuertaCtrlCertificacionesHuerta') )
+BEGIN
+   ALTER TABLE CtrlCertificacionesHuerta  DROP CONSTRAINT FKCtrlCertificacionesHuertaCtrlCertificacionesHuerta
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlCertificacionesHuertaCatHuerta') )
+BEGIN
+   ALTER TABLE CtrlCertificacionesHuerta  DROP CONSTRAINT FKCtrlCertificacionesHuertaCatHuerta
+END
+GO
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCertificacionesRequeridaCatCertificacion') )
+BEGIN
+   ALTER TABLE CatCertificacionesRequerida  DROP CONSTRAINT FKCatCertificacionesRequeridaCatCertificacion
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCertificacionesRequeridaCatCertificacion') )
+BEGIN
+   ALTER TABLE CatCertificacionesRequerida  DROP CONSTRAINT FKCatCertificacionesRequeridaCatCertificacion
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCertificacionesRequerida') )
+BEGIN
+   ALTER TABLE CatCertificacionesRequerida  DROP CONSTRAINT FKCatCertificacionesRequerida
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCertificacionesRequeridaCatTipoCultivo') )
+BEGIN
+   ALTER TABLE CatCertificacionesRequerida  DROP CONSTRAINT FKCatCertificacionesRequeridaCatTipoCultivo
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCajasCorteCatTipoCultivo') )
+BEGIN
+   ALTER TABLE CatCajasCorte  DROP CONSTRAINT FKCatCajasCorteCatTipoCultivo
+END
+GO
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCajasCortecatpais') )
+BEGIN
+   ALTER TABLE CatCajasCorte  DROP CONSTRAINT FKCatCajasCortecatpais
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatConceptoCatProceso') )
+BEGIN
+   ALTER TABLE CatConcepto  DROP CONSTRAINT FKCatConceptoCatProceso
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInventarioCajasCorteCatConcepto') )
+BEGIN
+   ALTER TABLE CtrlInventarioCajasCorte  DROP CONSTRAINT FKCtrlInventarioCajasCorteCatConcepto
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInventarioCajasCorteOrden_CtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CtrlInventarioCajasCorteOrden  DROP CONSTRAINT FKCtrlInventarioCajasCorteOrden_CtrlOrdenCorte
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInventarioCajasCorteOrden_CtrlInventarioCajasCorte') )
+BEGIN
+   ALTER TABLE CtrlInventarioCajasCorteOrden  DROP CONSTRAINT FKCtrlInventarioCajasCorteOrden_CtrlInventarioCajasCorte
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlPrevioSalidaCorte_CtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CtrlPrevioSalidaCorte  DROP CONSTRAINT FKCtrlPrevioSalidaCorte_CtrlOrdenCorte
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlPrevioSalidaCorte_CatResponsableCuadrilla') )
+BEGIN
+   ALTER TABLE CtrlPrevioSalidaCorte  DROP CONSTRAINT FKCtrlPrevioSalidaCorte_CatResponsableCuadrilla
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlPrevioSalidaCorte_CatVehiculo') )
+BEGIN
+   ALTER TABLE CtrlPrevioSalidaCorte  DROP CONSTRAINT FKCtrlPrevioSalidaCorte_CatVehiculo
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatStatus_CatProceso') )
+BEGIN
+   ALTER TABLE CatStatus  DROP CONSTRAINT FKCatStatus_CatProceso
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlLote_CatMaquinaSeleccionadora') )
+BEGIN
+   ALTER TABLE CtrlLote  DROP CONSTRAINT FKCtrlLote_CatMaquinaSeleccionadora
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlLoteOrdenCorte_CtrlLote') )
+BEGIN
+   ALTER TABLE CtrlLoteOrdenCorte  DROP CONSTRAINT FKCtrlLoteOrdenCorte_CtrlLote
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlLoteOrdenCorte_CtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CtrlLoteOrdenCorte  DROP CONSTRAINT FKCtrlLoteOrdenCorte_CtrlOrdenCorte
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatIngresoEmpaque_CtrlOrdenCorte') )
+BEGIN
+   ALTER TABLE CatIngresoEmpaque  DROP CONSTRAINT FKCatIngresoEmpaque_CtrlOrdenCorte
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatBodegaGenerica_CatTipoBodegaGenerica') )
+BEGIN
+   ALTER TABLE CatBodegaGenerica  DROP CONSTRAINT FKCatBodegaGenerica_CatTipoBodegaGenerica
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInvBodegaGenerico_CatBodegaGenerica') )
+BEGIN
+   ALTER TABLE CtrlInvBodegaGenerico  DROP CONSTRAINT FKCtrlInvBodegaGenerico_CatBodegaGenerica
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlInvBodegaGenerico_CatConcepto') )
+BEGIN
+   ALTER TABLE CtrlInvBodegaGenerico  DROP CONSTRAINT FKCtrlInvBodegaGenerico_CatConcepto
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlOrdenInvBodegaGenerico_CtrlInvBodegaGenerico') )
+BEGIN
+   ALTER TABLE CtrlOrdenInvBodegaGenerico  DROP CONSTRAINT FKCtrlOrdenInvBodegaGenerico_CtrlInvBodegaGenerico
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCalibrePais_CatFrutaDetalle') )
+BEGIN
+   ALTER TABLE CatCalibrePais  DROP CONSTRAINT FKCatCalibrePais_CatFrutaDetalle
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatCalibrePais_catpais') )
+BEGIN
+   ALTER TABLE CatCalibrePais  DROP CONSTRAINT FKCatCalibrePais_catpais
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraAcuerdo_CatTipoCorte') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraAcuerdo  DROP CONSTRAINT FKCatFrutaCabeceraAcuerdo_CatTipoCorte
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraAcuerdo_CatTipoBeneficiario') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraAcuerdo  DROP CONSTRAINT FKCatFrutaCabeceraAcuerdo_CatTipoBeneficiario
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraAcuerdo_CatPais') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraAcuerdo  DROP CONSTRAINT FKCatFrutaCabeceraAcuerdo_CatPais
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraAcuerdo_CatFrutaCabecera') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraAcuerdo  DROP CONSTRAINT FKCatFrutaCabeceraAcuerdo_CatFrutaCabecera
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlAcuerdo_CatCaracteristicasPesoFacturacion') )
+BEGIN
+   ALTER TABLE CtrlAcuerdo  DROP CONSTRAINT FKCtrlAcuerdo_CatCaracteristicasPesoFacturacion
+END
+
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlAcuerdo_CatFrutaCabeceraAcuerdo') )
+BEGIN
+   ALTER TABLE CtrlAcuerdo  DROP CONSTRAINT FKCtrlAcuerdo_CatFrutaCabeceraAcuerdo
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlAcuerdo_CatBeneficiario') )
+BEGIN
+   ALTER TABLE CtrlAcuerdo  DROP CONSTRAINT FKCtrlAcuerdo_CatBeneficiario
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlAcuerdo_CtrlProdHuerta') )
+BEGIN
+   ALTER TABLE CtrlAcuerdo  DROP CONSTRAINT FKCtrlAcuerdo_CtrlProdHuerta
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlAcuerdo_CatAcopiador') )
+BEGIN
+   ALTER TABLE CtrlAcuerdo  DROP CONSTRAINT FKCtrlAcuerdo_CatAcopiador
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlPrecioDirigidoDetalle_CatFrutaDetalle') )
+BEGIN
+   ALTER TABLE CtrlPrecioDirigidoDetalle  DROP CONSTRAINT FKCtrlPrecioDirigidoDetalle_CatFrutaDetalle
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCtrlPrecioDirigidoDetalle_CtrlAcuerdo') )
+BEGIN
+   ALTER TABLE CtrlPrecioDirigidoDetalle  DROP CONSTRAINT FKCtrlPrecioDirigidoDetalle_CtrlAcuerdo
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaDetalle') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio DROP CONSTRAINT FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaDetalle
+END
+GO
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaCabeceraAcuerdo') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio DROP CONSTRAINT FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaCabeceraAcuerdo
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraDetalleSemamanaPrecio_CatSemana') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio DROP CONSTRAINT FKCatFrutaCabeceraDetalleSemamanaPrecio_CatSemana
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraDetalle_CatFrutaDetalle') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraDetalle DROP CONSTRAINT FKCatFrutaCabeceraDetalle_CatFrutaDetalle
+END
+GO
+IF EXISTS(select * from dbo.sysobjects where id = object_id('FKCatFrutaCabeceraDetalle_CatFrutaCabecera') )
+BEGIN
+   ALTER TABLE CatFrutaCabeceraDetalle DROP CONSTRAINT FKCatFrutaCabeceraDetalle_CatFrutaCabecera
+END
+GO
+/*BORRADO TABLAS */
+
+--CtrlOrdenCorteCtrlAcuerdo
+GO
+
+
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlOrdenCorteCtrlAcuerdo') 
+BEGIN
+  DROP TABLE CtrlOrdenCorteCtrlAcuerdo
+END
+
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlLote_CtrlOrdenCorteCtrlAcuerdo') 
+BEGIN
+  DROP TABLE CtrlLote_CtrlOrdenCorteCtrlAcuerdo
+END
+
+
+go
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlOrdenCorteCtrlAcuerdo') 
+BEGIN
+  DROP TABLE CtrlOrdenCorteCtrlAcuerdo
+END
+
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatCuentaContable') 
+BEGIN
+  DROP TABLE CatCuentaContable
+END
+
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatFrutaCabeceraDetalleSemamanaPrecio') 
+BEGIN
+  DROP TABLE CatFrutaCabeceraDetalleSemamanaPrecio
+END
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatCalibrePais') 
+BEGIN
+  DROP TABLE CatCalibrePais
+END
+
+go
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatFrutaCabeceraDetalle') 
+BEGIN
+  DROP TABLE CatFrutaCabeceraDetalle
+END
+GO
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlOrdenInvBodegaGenerico') 
 BEGIN
   DROP TABLE CtrlOrdenInvBodegaGenerico
@@ -39,12 +472,18 @@ IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name =
 begin
 	DROP TABLE CatCertificacionesRequerida
 end
+go
 
 GO
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlAcuerdo') 
 begin
 	DROP TABLE CtrlAcuerdo
 end
+GO
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatFrutaCabeceraAcuerdo') 
+BEGIN
+  DROP TABLE CatFrutaCabeceraAcuerdo
+END
 
 go
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CtrlProdHuerta') 
@@ -54,14 +493,14 @@ END
 GO
 
 GO
-IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatPrecioDetalle') 
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatFrutaDetalle') 
 BEGIN
-  DROP TABLE CatPrecioDetalle 
+  DROP TABLE CatFrutaDetalle
 END
 GO
-IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatPrecioCabecera') 
+IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatFrutaCabecera') 
 BEGIN
-  DROP TABLE CatPrecioCabecera
+  DROP TABLE CatFrutaCabecera
 END
 GO
 
@@ -206,15 +645,6 @@ begin
 	DROP TABLE CatTipoDomicilio
 end
 GO
-
-
-GO
-IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatMercadoDestino') 
-begin
-	DROP TABLE CatMercadoDestino
-end
-GO
-GO
 IF EXISTS (select table_name from INFORMATION_SCHEMA.columns  where table_name = 'CatAcopiador') 
 begin
 	DROP TABLE CatAcopiador
@@ -302,43 +732,49 @@ BEGIN
   DROP TABLE CatTipoBodegaGenerica
 END
 GO
+/*CREACION TABLAS*/
+GO
+CREATE TABLE  CtrlLote_CtrlOrdenCorteCtrlAcuerdo(  /*Intermediario,Casa,Normal*/
+IdLote_OrdenCorteCtrlAcuerdo  int PRIMARY KEY,
+idLote int not null,
+IdOrdenCorteCtrlAcuerdo int not null
+)
+
 
 GO
-	CREATE TABLE  CatTipoBeneficiario(  /*Intermediario,Casa,Normal*/
+CREATE TABLE  CatTipoBeneficiario(  /*Intermediario,Casa,Normal*/
 IdTipoBeneficiario  int PRIMARY KEY,
 TipoBeneficiario     VARCHAR(50) 
 )
 
 GO
 CREATE TABLE  CatEmpresaTransportista(  
-/*La empresa que presta el servicio de flete para el corte. tendr· domicilio para ubicarla y varios telÈfonos*/
+/*La empresa que presta el servicio de flete para el corte. tendr√° domicilio para ubicarla y varios tel√©fonos*/
 IdEmpresaTransportista  int PRIMARY KEY,
 EmpresaTransportista   VARCHAR(200) 
 )
 GO
 CREATE TABLE  CatVehiculo(  
-/*La empresa que presta el servicio de flete corte. tendr· domicilio para ubicarla y varios telÈfonos*/
+/*La empresa que presta el servicio de flete corte. tendr√° domicilio para ubicarla y varios tel√©fonos*/
 IdVehiculo  int PRIMARY KEY,
 Placa   VARCHAR(20) not null,
 NumeroEconomico   VARCHAR(20) not null,
 Descripcion    VARCHAR(20),
 IdEmpresaTransportista int not null
 )
-ALTER TABLE CatVehiculo
-ADD FOREIGN KEY (IdEmpresaTransportista)
-REFERENCES CatEmpresaTransportista(IdEmpresaTransportista)
 
 GO
 CREATE TABLE  CatEmpresaCosechadora(  
-/*La empresa que presta el servicio de flete corte. tendr· domicilio para ubicarla y varios telÈfonos*/
+/*La empresa que presta el servicio de flete corte. tendr√° domicilio para ubicarla y varios tel√©fonos*/
 IdEmpresaCosechadora  int PRIMARY KEY,
 EmpresaCosechadora   VARCHAR(200) 
 )
 GO
 GO
 CREATE TABLE  CatResponsableCuadrilla(  
-/*La empresa que presta el servicio de flete corte. tendr· domicilio para ubicarla y varios telÈfonos*/
+/*La empresa que presta el servicio de flete corte. tendr√° domicilio para ubicarla y varios tel√©fonos*/
 IdResponsableCuadrilla  int PRIMARY KEY,
+IdEmpresaCosechadora  int not null,
 PrimerNombre   VARCHAR(50) not null ,
 SegundoNombre   VARCHAR(50) ,
 Paterno   VARCHAR(50)  not null,
@@ -347,12 +783,12 @@ Materno   VARCHAR(50)  not null,
 GO
 
 CREATE TABLE CatCaracteristicasPesoFacturacion(
-/*Habr· por default un registro(No editarble: PesoEnBascula=0 Es decir, este tipo 
-de acuerdo ser· facturado despues deLaSelecciÛn, si el campo PesoEnBascula=0 todos los dem·s campos ser·n cero, es decir, como se
-pesar· en banda no tendr· que seleccionar las otras caracterÌsticas, adem·s los controles ser·n radios.*/
+/*Habr√° por default un registro(No editarble: PesoEnBascula=0 Es decir, este tipo 
+de acuerdo ser√° facturado despues deLaSelecci√≥n, si el campo PesoEnBascula=0 todos los dem√°s campos ser√°n cero, es decir, como se
+pesar√° en banda no tendr√° que seleccionar las otras caracter√≠sticas, adem√°s los controles ser√°n radios.*/
 IdCaracteristicasPesoFacturacion    int PRIMARY KEY,
 PesoEnBascula decimal(1) not null, 
-/*se determina si se pesar· en bascula(previo) al ingreso al empaque,el cero indica en banda posterior a la selecciÛn*/
+/*se determina si se pesar√° en bascula(previo) al ingreso al empaque,el cero indica en banda posterior a la selecci√≥n*/
 Promediar decimal(1) not null,
 CargarAlMayor decimal(1) not null,
 CargarAlMenos decimal(1) not null,
@@ -369,11 +805,6 @@ RFC   VARCHAR(50) ,
 Homoclave   VARCHAR(50) 
 )
 GO
-CREATE TABLE  CatMercadoDestino(
-IdMercadoDestino int PRIMARY KEY,
-MercadoDestino varchar(500)
-
-)
 GO
 CREATE TABLE  CatAcopiador(
 IdAcopiador int PRIMARY KEY,
@@ -402,36 +833,9 @@ Homoclave   VARCHAR(50)
 
 GO
 
-GO
-
-/****** Object:  Table [dbo].[CatPais]    Script Date: 2015/11/10 11:34:03 p. m. ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-SET ANSI_PADDING ON
-GO
-
-CREATE TABLE [dbo].[CatPais](
-	[IdPais] [int] NOT NULL,
-	[Pais] [varchar](50) NOT NULL,
-	[PaisCode] [varchar](2) NOT NULL,
-	[PaisIsoCode] [varchar](3) NOT NULL,
- CONSTRAINT [PK__CatPais__FC850A7BC6A75AA9] PRIMARY KEY CLUSTERED 
-(
-	[IdPais] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-SET ANSI_PADDING OFF
-GO
-
-
-
+CREATE TABLE  CatPais(
+IdPais int PRIMARY KEY,
+Pais VARCHAR(50) )
 GO
 CREATE TABLE  CatEntidadFederativa(
 IdEntidadFederativa int PRIMARY KEY,
@@ -439,9 +843,8 @@ IdPais  int   NOT NULL,
 EntidadFederativa  VARCHAR(50) 
 )
 GO
-ALTER TABLE CatEntidadFederativa
-ADD FOREIGN KEY (IdPais)
-REFERENCES CatPais(IdPais)
+
+
 GO
 CREATE TABLE  CatMunicipio(
 IdMunicipio int PRIMARY KEY,
@@ -449,9 +852,6 @@ IdEntidadFederativa  int   NOT NULL,
 Municipio  VARCHAR(50) 
 )
 GO
-ALTER TABLE CatMunicipio
-ADD FOREIGN KEY (IdEntidadFederativa)
-REFERENCES CatEntidadFederativa(IdEntidadFederativa)
 
 GO
 CREATE TABLE  CatLocalidad(
@@ -459,28 +859,22 @@ IdLocalidad int PRIMARY KEY,
 IdMunicipio   int   NOT NULL, 
 Localidad   VARCHAR(50) 
 )
-ALTER TABLE CatLocalidad
-ADD FOREIGN KEY (IdMunicipio)
-REFERENCES CatMunicipio(IdMunicipio)
 GO
-GO
+
 CREATE TABLE CtrlOrdenCorte (
 IdOrdenCorte  int PRIMARY KEY,
-IdAcuerdo int   NOT NULL ,
 fecha date,
 IdEmpresaTransportista int not null,
 IdEmpresaCosechadora int not null
 )
 GO
-ALTER TABLE CtrlOrdenCorte
-ADD FOREIGN KEY (IdEmpresaCosechadora)
-REFERENCES CatEmpresaCosechadora(IdEmpresaCosechadora)
+CREATE TABLE CtrlOrdenCorteCtrlAcuerdo(
+/*ESTA TABLA SE CREO YA QUE EN UNA ORDEN DE CORTE, PUEDE  HABER VARIOS HUERTOS, ES DECIR, VARIOS ACUERDOS.*/
+IdOrdenCorteCtrlAcuerdo  int PRIMARY KEY,
+IdOrdenCorte  int  NOT NULL,
+IdAcuerdo  int  NOT NULL
+)
 
-
-GO
-ALTER TABLE CtrlOrdenCorte
-ADD FOREIGN KEY (IdEmpresaTransportista)
-REFERENCES CatEmpresaTransportista(IdEmpresaTransportista)
 
 GO
 CREATE TABLE CatProceso(     /*(Acuerdo,orden,preenvio etc,IdgresoEmpaque.)*/
@@ -499,9 +893,6 @@ IdDocumentacion  int   NOT NULL ,
 IdProceso  int   NOT NULL 
 )
 GO
-ALTER TABLE CatDocumentacionProceso
-ADD FOREIGN KEY (IdDocumentacion)
-REFERENCES CatDocumentacion(IdDocumentacion)
 GO
 CREATE TABLE CatHuerta(
 idHuerta      int PRIMARY KEY,
@@ -513,10 +904,8 @@ SuperficieMetros  decimal,
 ASNM  decimal
 )
 GO
-ALTER TABLE CatHuerta
-ADD FOREIGN KEY (idLocalidad)
-REFERENCES CatLocalidad(idLocalidad)
-GO
+
+
 CREATE TABLE  CatTipoCorte( /*banda,parejo,dirigido*/
 IdTipoCorte     int PRIMARY KEY,
 TipoCorte   VARCHAR(50) 
@@ -533,7 +922,7 @@ IdTipoCultivo     int PRIMARY KEY,
 TipoCultivo    VARCHAR(50) )
 GO
 CREATE TABLE  CatSemana(
-/*se llama semana aunque en realidad son solo periodos, por los precios se quieren establecer de lunes a miÈrcoles y jueves a viernes otro o se quiere tilizar para otra cosa*/
+/*se llama semana aunque en realidad son solo periodos, por los precios se quieren establecer de lunes a mi√©rcoles y jueves a viernes otro o se quiere tilizar para otra cosa*/
 IdSemana     int PRIMARY KEY,
 FechaInicio date   NOT NULL ,
 FechaFin date   NOT NULL 
@@ -547,77 +936,23 @@ ClaseFruta varchar(50)
 )
 
 GO
-CREATE TABLE CatPrecioCabecera(
-/* Al usuario se le mostrar· 3 diferentes pantallas(banda dirigido, parejo), por debajo guardaremos esta info en esta estructura diferenciada por el IdTipoCorte
-NOta: se agregÛ banda y dirigido por que pensamos que al productor le pudieran pagar 100 gr 150 gr a 15 en banda, pero dirigido ese mismo a 16
-Las fechas se agregaron para realizar una planeaciÛn de precios a lo largo del mes y aprovechas el historial de precios para hacer estimaciones el aÒo siguiente.
-*/
-IdPrecioCabecera      int PRIMARY KEY,
-Codigo varchar(5),
-IdMercadoDestino           int   NOT NULL , /*llave foranea a CatMercadoDestino*/
-IdSemana           int   NOT NULL , /*llave foranea a Catsemanas*/
-IdTipoCorte        int   NOT NULL , /*banda dirigido*/
-IdFloracion       int   NOT NULL ,
-IdTipoCultivo       int   NOT NULL , /*marseÒa*/
-FechaInicio date,
-FechaFin date,
-EsBanda decimal(1),
-IdClaseFruta   int   NOT NULL ,
-IdTipoBeneficiario   int   NOT NULL 
+CREATE TABLE CatFrutaCabecera(
+/*  Almacena las caracteristica de la fruta agrupadas por un codigo, antes agrupaba un monton de cosas mas y se elimnaron*/
+IdFrutaCabecera      int PRIMARY KEY,
+Codigo varchar(5)      not null,
+IdFloracion       int   NOT NULL , /*loca,aventa,marce*/
+IdTipoCultivo       int   NOT NULL , /*Organico,conve*/
+IdClaseFruta   int   NOT NULL , /*primer seg. etc.*/
 )
 GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdTipoBeneficiario)
-REFERENCES CatTipoBeneficiario(IdTipoBeneficiario)
-GO
---
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdClaseFruta)
-REFERENCES CatClaseFruta(IdClaseFruta)
-
-
-GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdMercadoDestino)
-REFERENCES CatMercadoDestino(IdMercadoDestino)
-
-GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdSemana)
-REFERENCES CatSemana(IdSemana)
-
-GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdTipoCorte)
-REFERENCES CatTipoCorte(IdTipoCorte)
-GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdFloracion)
-REFERENCES CatFloracion(IdFloracion)
-GO
-
-GO
-ALTER TABLE CatPrecioCabecera
-ADD FOREIGN KEY (IdTipoCultivo)
-REFERENCES CatTipoCultivo(IdTipoCultivo)
-GO
-
-
-
-
-CREATE TABLE CatPrecioDetalle (
-IdPrecioDetalle     int PRIMARY KEY,
-IdPrecioCabecera   int   NOT NULL,
+CREATE TABLE CatFrutaDetalle (
+/*esto es el gramaje por cada tiempo de fruta, el precio se realiza con una estructura mas compleja*/
+IdFrutaDetalle     int PRIMARY KEY,
+Codigo varchar(5) not null,
 GramosDesde  decimal,
 GramosHasta decimal,
-Costo decimal
 )
 
-
-GO
-ALTER TABLE CatPrecioDetalle
-ADD FOREIGN KEY (IdPrecioCabecera)
-REFERENCES CatPrecioCabecera(IdPrecioCabecera)
 GO
 CREATE TABLE  CtrlProdHuerta(
 IdProdHuerta int PRIMARY KEY,
@@ -625,15 +960,7 @@ idHuerta   int   NOT NULL,
 IdProductor   int   NOT NULL)
 
 GO
-ALTER TABLE CtrlProdHuerta
-ADD FOREIGN KEY (idHuerta)
-REFERENCES CatHuerta(idHuerta)
-GO
-ALTER TABLE CtrlProdHuerta
-ADD FOREIGN KEY (IdProductor)
-REFERENCES CatProductor(IdProductor)
-GO
-CREATE TABLE   CatTipoDomicilio ( /*Fiscal, de localizaciÛn 1,Oficina,casa*/
+CREATE TABLE   CatTipoDomicilio ( /*Fiscal, de localizaci√≥n 1,Oficina,casa*/
 IdTipoDomicilio int PRIMARY KEY,
 TipoDomicilio  VARCHAR(50) 
 )
@@ -650,14 +977,6 @@ Colonia    VARCHAR(50) ,
 CodigoPostal   VARCHAR(50) ,
 IdLocalidad  int   NOT NULL)
 GO
-ALTER TABLE CatDomicilio
-ADD FOREIGN KEY (IdTipoDomicilio)
-REFERENCES CatTipoDomicilio(IdTipoDomicilio)
-GO
-ALTER TABLE CatDomicilio
-ADD FOREIGN KEY (IdLocalidad)
-REFERENCES CatLocalidad(IdLocalidad)
-------------------------------------------------------------
 GO
 CREATE TABLE  CtrlEntidadDomicilio(
 IdEntidadDomicilio int PRIMARY KEY,
@@ -666,74 +985,15 @@ IdDomicilios    int   NOT NULL,
 IdProceso    int   NOT NULL /*puede ser que haya varios ids del domicilio del acopiador, productor etc.por eso se puso este campo*/
 )
 GO
-ALTER TABLE CtrlEntidadDomicilio
-ADD FOREIGN KEY (IdProceso)
-REFERENCES CatProceso(IdProceso)
-go
-
-ALTER TABLE CtrlEntidadDomicilio
-ADD FOREIGN KEY (IdDomicilios)
-REFERENCES CatDomicilio(IdDomicilio)
-------------------------------------------------------------
-
-
-GO
-CREATE TABLE CtrlAcuerdo
-(
-IdAcuerdo int PRIMARY KEY,
--- IdTipoCultivo se quitÛ ya que esto lo indica el acerdo    int   NOT NULL ,/*convencional*/
---IdProductor  se remplazÛ por  CtrlProdHuerta(IdProdHuert, finalmente tenemos que establecer una huerta.  int   NOT NULL ,/*no pones precio ya que el productor ya est· vinculado a un tipo(de productor) y ese tipo a un precio nos ayudamos del idTipoCorte y IdtipoCultivo para determinar el precio*/
---idTipoCorte    int   NOT NULL ,/*banda,parejo,dirigido se quitÛ ya queeste dato lo obtenemos del catalogo de precios*/
-	IdAcopiador   int   NOT NULL ,/* hacer un catalogo de acopiadores*/
---	SE QUITO ya qeu en el acuerdo se establece el periodo de vigencia deel acuerdo FechaCorte /* fecha en que se realizar· el corte, esto es importante ya que est· vinculado al precio*/
-IdProdHuerta    int   NOT NULL,
-IdBeneficiario    int   NOT NULL,
-IdPrecioCabecera    int   NOT NULL,
-IdCaracteristicasPesoFacturacion    int   NOT NULL
-)  
-GO
-ALTER TABLE CtrlAcuerdo
-ADD FOREIGN KEY (IdCaracteristicasPesoFacturacion)
-REFERENCES CatCaracteristicasPesoFacturacion(IdCaracteristicasPesoFacturacion)
-
-GO
-ALTER TABLE CtrlAcuerdo
-ADD FOREIGN KEY (IdPrecioCabecera)
-REFERENCES CatPrecioCabecera(IdPrecioCabecera)
-GO
-ALTER TABLE CtrlAcuerdo
-ADD FOREIGN KEY (IdBeneficiario)
-REFERENCES CatBeneficiario(IdBeneficiario)
-
-GO
-ALTER TABLE CtrlAcuerdo
-ADD FOREIGN KEY (IdProdHuerta)
-REFERENCES CtrlProdHuerta(IdProdHuerta)
-
-go
-ALTER TABLE CtrlAcuerdo
-ADD FOREIGN KEY (IdAcopiador)
-REFERENCES CatAcopiador(IdAcopiador)
-
-GO
-
-GO
---ALTER TABLE CtrlAcuerdo
---ADD FOREIGN KEY (idTipoCorte)
---REFERENCES CatTipoCorte(idTipoCorte)
-------------------------------------------------------------
 GO
 CREATE TABLE CtrlEntidadDocumentacion(
 IdEntidadDocumentacion    int PRIMARY KEY,
 IdEntidad  int   NOT NULL , /*IdAcuerdo etc.*/
 IdDocumentacionProceso int   NOT NULL ,
 NombreArchivo VARCHAR(4000)
-/* Se habÌa pensado en agegar IdTipoEntidad pero esa tabla como viene de CatDocumentacionProceso y luego de CatProceso ya no fuÈ neceesario*/
+/* Se hab√≠a pensado en agegar IdTipoEntidad pero esa tabla como viene de CatDocumentacionProceso y luego de CatProceso ya no fu√© neceesario*/
 )
 GO
-ALTER TABLE CtrlEntidadDocumentacion
-ADD FOREIGN KEY (IdDocumentacionProceso)
-REFERENCES CatDocumentacionProceso(IdDocumentacionProceso)
 go
 CREATE TABLE CatCertificacion(
 IdCertificacion    int PRIMARY KEY,
@@ -750,95 +1010,32 @@ IdHuerta int not null,
 IdCertificacion int not null
 )
 GO
-ALTER TABLE CtrlCertificacionesHuerta
-ADD FOREIGN KEY (IdCertificacion)
-REFERENCES CatCertificacion(IdCertificacion)
-
-GO
-ALTER TABLE CtrlCertificacionesHuerta
-ADD FOREIGN KEY (idHuerta)
-REFERENCES CatHuerta(idHuerta)
 
 GO
 CREATE TABLE CatCertificacionesRequerida(
 IdCertificacionesRequerida    int PRIMARY KEY,
-IdMercadoDestino int   NOT NULL ,
+Idpais int   NOT NULL ,
 IdTipoCultivo int   NOT NULL,
 IdCertificacion  int   NOT NULL
 )
 GO
-ALTER TABLE CatCertificacionesRequerida
-ADD FOREIGN KEY (IdCertificacion)
-REFERENCES CatCertificacion(IdCertificacion)
-
-GO
-ALTER TABLE CatCertificacionesRequerida
-ADD FOREIGN KEY (IdMercadoDestino)
-REFERENCES CatMercadoDestino(IdMercadoDestino)
-
-
-GO
-ALTER TABLE CatCertificacionesRequerida
-ADD FOREIGN KEY (IdTipoCultivo)
-REFERENCES CatTipoCultivo(IdTipoCultivo)
-
-GO
-CREATE TABLE CtrlPrecioDirigidoDetalle(
-/*almacena la relaciÛn de si es dirigido, cuales calibres o rangos(los rengos se 
-manejar· como un solo elemento que en el cat·logo de precios)seleccionaron para ir 
-dirigido o si es parejo el elemento "figticio" de 0 a 7 kgs.
-
-!! Importante, despues de leer este texto desechalo de tu cabeza el corte dirigido a˙n cuando es por rango se seleccionar· un grupo de n elementos de gramos para formar el 
-rango deseado, esto por que tiene que haber una correspondencia entre los calibres comerciales finales. y para no tener un quebradero de cabeza cuando se conviertan a los calibres
-que mencionan para los diferentes paÌses.
-*/
-IdPrecioDirigidoDetalle    int PRIMARY KEY,
-IdPrecioDetalle int   NOT NULL ,
-IdAcuerdo int   NOT NULL
-)
-GO
-ALTER TABLE CtrlPrecioDirigidoDetalle
-ADD FOREIGN KEY (IdPrecioDetalle)
-REFERENCES CatPrecioDetalle(IdPrecioDetalle)
-GO
-ALTER TABLE CtrlPrecioDirigidoDetalle
-ADD FOREIGN KEY (IdAcuerdo)
-REFERENCES CtrlAcuerdo(IdAcuerdo)
 GO
 CREATE TABLE  CatCajasCorte(  
 IdCatCajasCorte  int PRIMARY KEY,
 Tamanio decimal(5,2) ,/*se indica en kgs*/
 IdTipoCultivo int not null,
-IdMercadoDestino int not null,
+idpais int not null,
 color varchar(20)
 )
 GO
-ALTER TABLE CatCajasCorte
-ADD FOREIGN KEY (IdTipoCultivo)
-REFERENCES CatTipoCultivo(IdTipoCultivo)
-GO
-ALTER TABLE CatCajasCorte
-ADD FOREIGN KEY (IdMercadoDestino)
-REFERENCES CatMercadoDestino(IdMercadoDestino)
-
-GO
---CREATE TABLE  CatConcepto(
 
 CREATE TABLE  CatConcepto(
-/*En primera instancia servir· para almacenar los conceptos de inventario,
- es decir, "Entrada por Compra de cajas", "Entrada por reparacion de cajas", "Salida para camiÛn seg˙n orden"*/
+/*En primera instancia servir√° para almacenar los conceptos de inventario,
+ es decir, "Entrada por Compra de cajas", "Entrada por reparacion de cajas", "Salida para cami√≥n seg√∫n orden"*/
 IdConcepto  int PRIMARY KEY,
 IdProceso int   NOT NULL,
-Concepto varchar(50) not null,
-Idcuenta int not null,
-IdSubCuenta int not null,
-IdSubSubCuent int not null
+Concepto varchar(50) not null
 )
-GO
-ALTER TABLE CatConcepto
-ADD FOREIGN KEY (IdProceso)
-REFERENCES CatProceso(IdProceso)
-
 go
 CREATE TABLE CtrlInventarioCajasCorte(
 IdInventarioCajasCorte    int PRIMARY KEY,
@@ -849,25 +1046,12 @@ fecha           datetime not null,
 IdConcepto  int   NOT NULL
 )
 GO
-ALTER TABLE CtrlInventarioCajasCorte
-ADD FOREIGN KEY (IdConcepto)
-REFERENCES CatConcepto(IdConcepto)
-GO
 
 CREATE TABLE CtrlInventarioCajasCorteOrden(
 IdInventarioCajasCorteOrden    int PRIMARY KEY,
 IdOrdenCorte int not null,
 IdInventarioCajasCorte int not null
 )
-GO
-ALTER TABLE CtrlInventarioCajasCorteOrden
-ADD FOREIGN KEY (IdOrdenCorte)
-REFERENCES CtrlOrdenCorte(IdOrdenCorte)
-GO
-GO
-ALTER TABLE CtrlInventarioCajasCorteOrden
-ADD FOREIGN KEY (IdInventarioCajasCorte)
-REFERENCES CtrlInventarioCajasCorte(IdInventarioCajasCorte)
 GO
 CREATE TABLE CtrlPrevioSalidaCorte (
 IdPrevioSalidaCorte  int PRIMARY KEY,
@@ -881,40 +1065,23 @@ Observaciones varchar(max)
 
 )
 GO
-ALTER TABLE CtrlPrevioSalidaCorte
-ADD FOREIGN KEY (IdOrdenCorte)
-REFERENCES CtrlOrdenCorte(IdOrdenCorte)
-GO
-ALTER TABLE CtrlPrevioSalidaCorte
-ADD FOREIGN KEY (IdResponsableCuadrilla)
-REFERENCES CatResponsableCuadrilla(IdResponsableCuadrilla)
-GO
-GO
-ALTER TABLE CtrlPrevioSalidaCorte
-ADD FOREIGN KEY (idVehiculo)
-REFERENCES CatVehiculo(idVehiculo)
-GO
 CREATE TABLE CatStatus(
-/*Servir· de status general y genÈrico, por ejempll
-entro al empaque, est·n descargando, est·n en reciba, est·n realizando hueso y m.seca etc*/
+/*Servir√° de status general y gen√©rico, por ejempll
+entro al empaque, est√°n descargando, est√°n en reciba, est√°n realizando hueso y m.seca etc*/
 idEstatus int PRIMARY KEY,
 Estatus varchar(20) not null,
 IdProceso int not null,
 ConsecutivoCronologico int, /*aceptar nulos ya que en ocasiones se puede que no sea necesario*/
 PermiteRetroceso decimal(1) ,/*es decir en base a la parte cronologica se puede tener retrocesos de status*/
-EsEstatusFinal  decimal(1)  /*solo un elmeneto por proceso podr· ser estatus final =1*/
+EsEstatusFinal  decimal(1)  /*solo un elmeneto por proceso podr√° ser estatus final =1*/
 )
-GO
-ALTER TABLE CatStatus
-ADD FOREIGN KEY (IdProceso)
-REFERENCES CatProceso(IdProceso)
 GO
 CREATE TABLE CtrlEntidadEstatus(
 IdEntidadEstatus    int PRIMARY KEY,
 IdEntidad  int   NOT NULL , /*IdAcuerdo IdLote etc,*/
 idEstatus  int   NOT NULL ,
 FechaInicioEstatus datetime not null,
-FechaFinEstatus datetime not null /*Ser· el 01/01/2200 en vez de null null*/
+FechaFinEstatus datetime not null /*Ser√° el 01/01/2200 en vez de null null*/
 )
 GO
 
@@ -927,27 +1094,16 @@ IdLote  int PRIMARY KEY,
 idMaquinaSeleccionadora int   NOT NULL ,
 FechaHoraCorridaFijada datetime,
 FechaHoraCorridaReal datetime,
-/* CtrlEntidadEstatus.IdEntidadEstatus no se pone pero se estar· vinculado */
+BandaEmpaquetado decimal(1) not null /*si se va a empaquetar o solo se pasar√° a bodega.*/
+/* CtrlEntidadEstatus.IdEntidadEstatus no se pone pero se estar√° vinculado */
 )
-go
-ALTER TABLE CtrlLote
-ADD FOREIGN KEY (idMaquinaSeleccionadora)
-REFERENCES CatMaquinaSeleccionadora(idMaquinaSeleccionadora)
 GO
-CREATE TABLE CtrlLoteOrdenCorte(
-/*Como n ordenes se pueden correr en un solo lote, aquÌ es donde se dice esta y esta y esta orden se correr·n en este lote*/
-IdLoteOrdenCorte  int PRIMARY KEY,
-IdLote int not null,
-IdOrdenCorte int not null
-)
-go
-ALTER TABLE CtrlLoteOrdenCorte
-ADD FOREIGN KEY (IdLote)
-REFERENCES CtrlLote(IdLote)
-go
-ALTER TABLE CtrlLoteOrdenCorte
-ADD FOREIGN KEY (IdOrdenCorte)
-REFERENCES CtrlOrdenCorte(IdOrdenCorte)
+--CREATE TABLE CtrlLoteOrdenCorte(
+--/*Como n ordenes se pueden correr en un solo lote, aqu√≠ es donde se dice esta y esta y esta orden se correr√°n en este lote*/
+--IdLoteOrdenCorte  int PRIMARY KEY,
+--IdLote int not null,
+--IdOrdenCorte int not null
+--)
 
 GO
 
@@ -957,33 +1113,23 @@ IdgresoEmpaque   int PRIMARY KEY,
 idOrdenCorte int not null,
 --PesoFruta decimal(15,2) not null,
 HoraIngreso datetime  not null,
-Observaciones varchar(2000),
-/*Llevar· status conel esquema global*/
+Observaciones varchar(2000)
+/*Llevar√° status conel esquema global*/
 )
 GO
-ALTER TABLE CatIngresoEmpaque
-ADD FOREIGN KEY (idOrdenCorte)
-REFERENCES CtrlOrdenCorte(idOrdenCorte)
-GO
 CREATE TABLE CatTipoBodegaGenerica(
-/*3 tipo de bodega cuarentena, de selecciÛn y de envÌo*/
+/*3 tipo de bodega cuarentena, de selecci√≥n y de env√≠o*/
 idTipoBodegaGenerica   int PRIMARY KEY,
 TipoBodegaGenerica varchar(50),
 )
 go
 CREATE TABLE CatBodegaGenerica(
-/*existen 3 tipo de bodega cuarentena, de selecciÛn y de envÌo, se llevar· un mecanismo genÈrico de inventario por n bodegas*/
+/*existen 3 tipo de bodega cuarentena, de selecci√≥n y de env√≠o, se llevar√° un mecanismo gen√©rico de inventario por n bodegas*/
 idBodegaGenerica   int PRIMARY KEY,
 idTipoBodegaGenerica int not null,
 BodegaGenerica varchar(50),
 CapacidadKgs decimal(15,2)
 )
-GO
-ALTER TABLE CatBodegaGenerica
-ADD FOREIGN KEY (idTipoBodegaGenerica)
-REFERENCES CatTipoBodegaGenerica(idTipoBodegaGenerica)
-GO
-
 GO
 CREATE TABLE CtrlInvBodegaGenerico(
 IdInvBodegaGenerico  int PRIMARY KEY,
@@ -998,63 +1144,63 @@ SaleDineroEmpaque decimal(15,2) not null,
 IdPrecioDetalle  int null /*Este elemento es el que indica el tipo de fruta.*/
 /*
 Manejo de inventario:
-Pago en b·scula:
+Pago en b√°scula:
      Inventario en bodegaCuarentenaria:
 	     MarcadoPago en Bascula    
 			 Parejo:
 			   Entrada:
 			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
 			     En base al peso de la fruta se inserta el idPrecioDetalle y en concepto EntraDineroEmpaque se pone la cantidad total de dinero que
-				 "EntrÛ"(qeu se pagar· al beneficiario), se agregan los kilos en KgEntrada idConcepto (Compras crÈdito)/Compras Contado
+				 "Entr√≥"(qeu se pagar√° al beneficiario), se agregan los kilos en KgEntrada idConcepto (Compras cr√©dito)/Compras Contado
 			   Salida:
 			      Se establece la misma cantidad de entrada el idPrecioDetalle y idConcepto(Paso a Maquina seleccionadora)
 			 Dirigido
 			    Entrada
 			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
-				Como el rango dirigido se formÛ en base a varios detalles(gramos) se considera que toda la fruta est· en este rango(para pagar establecer la cantidad de pago de inmediato)
-				idBodegaGenerica=bodega de cuarentena KgEntrada=(El total del peso del camiÛn) idconcepto= (Compras crÈdito)/Compras Contado, 
+				Como el rango dirigido se form√≥ en base a varios detalles(gramos) se considera que toda la fruta est√° en este rango(para pagar establecer la cantidad de pago de inmediato)
+				idBodegaGenerica=bodega de cuarentena KgEntrada=(El total del peso del cami√≥n) idconcepto= (Compras cr√©dito)/Compras Contado, 
 				de la tabla CatCaracteristicasPesoFacturacion se determina si el total se promedia entre los diferentes calibres que conforman el ranto o todo se carga al calibre mas alto o al mas bajo
 				o defitivamente se captura
 			 EnBanda
 			   Entrada
 			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
-				DebiÛ estar marcado en  CatCaracteristicasPesoFacturacion que en banda y se determina que 
+				Debi√≥ estar marcado en  CatCaracteristicasPesoFacturacion que en banda y se determina que 
 				tabla CatCaracteristicasPesoFacturacion se determina si el total se promedia entre los diferentes calibres que conforman el ranto o todo se carga al calibre mas alto o al mas bajo
 				o defitivamente se captura
 
 
 	     MarcadoPago en banda
-		   Parejo,Dirigido,EnBanda: todo se mete como un solo concepto, esto solo para tener un n˙mero, finalmente como se especifica en PrecioCabecera el peso que vale es en banda y no en 
+		   Parejo,Dirigido,EnBanda: todo se mete como un solo concepto, esto solo para tener un n√∫mero, finalmente como se especifica en PrecioCabecera el peso que vale es en banda y no en 
 		   bascula
 
 
-     Inventario en bodegaSelecciÛn:
-	     MarcadoPago en Bascula    (Se seleccionÛ esta opciÛn, pero tambiÈn todos pasan por la misma cantidad de bodegas.)
+     Inventario en bodegaSelecci√≥n:
+	     MarcadoPago en Bascula    (Se seleccion√≥ esta opci√≥n, pero tambi√©n todos pasan por la misma cantidad de bodegas.)
 			 Parejo:
 			   Entrada:
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
-				  se realiza una entrada ala bodega de selecciÛn con la cantidad que se recopilÛ en la banda
+				  se realiza una entrada ala bodega de selecci√≥n con la cantidad que se recopil√≥ en la banda
 			 Dirigido
 			    Entrada
 			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad de cada idPrecioDetalle capturado
-				  se realiza una entrada ala bodega de selecciÛn con la cantidad que se recopilÛ en la banda
+				  se realiza una entrada ala bodega de selecci√≥n con la cantidad que se recopil√≥ en la banda
 
 			 EnBanda
 			   Entrada
 			    se inserta en CtrlOrdenInvBodegaGenerico su correspondiente
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad de cada idPrecioDetalle capturado
-				  se realiza una entrada ala bodega de selecciÛn con la cantidad que se recopilÛ en la banda
+				  se realiza una entrada ala bodega de selecci√≥n con la cantidad que se recopil√≥ en la banda
 
 	     MarcadoPago en BAnda
 			 Parejo: 
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
-				  se realiza una entrada ala bodega de selecciÛn con la cantidad que se recopilÛ en la banda
+				  se realiza una entrada ala bodega de selecci√≥n con la cantidad que se recopil√≥ en la banda
 			 Dirigido
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
 			      como se selecciona un rango(compuesto por varios pesos y calibres, donde todos ellos tienen el mismo precio) se inserta el peso que le corresponde a cada calibre
-				  de acuerdo con la selecciÛn de la banda y el resto de los calibres se reliza un concepto ajuste, es decir seg˙n se capturÛ en banda, solo que se establece un concepto de ajuste
-				  contable aumento o disminuciÛn de dinero para que se pague idÈntico
+				  de acuerdo con la selecci√≥n de la banda y el resto de los calibres se reliza un concepto ajuste, es decir seg√∫n se captur√≥ en banda, solo que se establece un concepto de ajuste
+				  contable aumento o disminuci√≥n de dinero para que se pague id√©ntico
 			Banda
 			      A la cantidad de la bodega de cuarentena se realiza una salida del idPrecioDetalle con la totalidad
 			     Sin problema alguno
@@ -1063,21 +1209,478 @@ Pago en b·scula:
 
 )
 GO
-ALTER TABLE CtrlInvBodegaGenerico
-ADD FOREIGN KEY (idBodegaGenerica)
-REFERENCES CatBodegaGenerica(idBodegaGenerica)
-
-GO
-ALTER TABLE CtrlInvBodegaGenerico
-ADD FOREIGN KEY (IdConcepto)
-REFERENCES CatConcepto(IdConcepto)
-GO
 CREATE TABLE CtrlOrdenInvBodegaGenerico( 
 IdOrdenInvBodegaGenerico  int PRIMARY KEY,
 IdInvBodegaGenerico int not null,
-IdOrden int not null
+
+IdOrdenCorte int not null
+)
+
+GO
+CREATE TABLE CatCalibrePais(
+/* Un mismo gramaje se considera diferente calibre seg√∫n el pa√≠s, se vincular√° a la tabla de CatFrutaDetalle*/
+IdCalibrePais  int PRIMARY KEY,
+IdFrutaDetalle     int  not null,
+NumeroCalibre  varchar(50) not null,
+idPais     int  not null
 )
 GO
+
+
+CREATE TABLE CatFrutaCabeceraAcuerdo(
+/* Se me hace mucha divisi√≥n, pero al final es mas conveniente*/
+IdFrutaCabeceraAcuerdo  int PRIMARY KEY,
+Codigo varchar(5)      not null,
+IdFrutaCabecera      int not null,
+IdTipoBeneficiario      int not null,
+IdTipoCorte      int not null,
+Idpais   int not null /*este es el pa√≠s predeterminado para el cual se compra la fruta*/
+)
+GO
+CREATE TABLE CtrlAcuerdo
+(
+IdAcuerdo int PRIMARY KEY,
+IdAcopiador   int   NOT NULL ,/* hacer un catalogo de acopiadores*/
+IdProdHuerta    int   NOT NULL,/*tabla huerta productor*/
+IdBeneficiario    int   NOT NULL,
+IdFrutaCabeceraAcuerdo    int   NOT NULL,
+IdCaracteristicasPesoFacturacion    int   NOT NULL
+-- IdTipoCultivo se quit√≥ ya que esto lo indica el acerdo    int   NOT NULL ,/*convencional*/
+--IdProductor  se remplaz√≥ por  CtrlProdHuerta(IdProdHuert, finalmente tenemos que establecer una huerta.  int   NOT NULL ,/*no pones precio ya que el productor ya est√° vinculado a un tipo(de productor) y ese tipo a un precio nos ayudamos del idTipoCorte y IdtipoCultivo para determinar el precio*/
+--idTipoCorte    int   NOT NULL ,/*banda,parejo,dirigido se quit√≥ ya queeste dato lo obtenemos del catalogo de precios*/
+--	SE QUITO ya qeu en el acuerdo se establece el periodo de vigencia deel acuerdo FechaCorte /* fecha en que se realizar√° el corte, esto es importante ya que est√° vinculado al precio*/
+
+)  
+
+GO
+CREATE TABLE CtrlPrecioDirigidoDetalle(
+/*almacena la relaci√≥n de si es dirigido, cuales calibres o rangos(los rengos se 
+manejar√° como un solo elemento que en el cat√°logo de precios)seleccionaron para ir 
+dirigido o si es parejo el elemento "figticio" de 0 a 7 kgs.
+
+!! Importante, despues de leer este texto desechalo de tu cabeza el corte dirigido a√∫n cuando es por rango se seleccionar√° un grupo de n elementos de gramos para formar el 
+rango deseado, esto por que tiene que haber una correspondencia entre los calibres comerciales finales. y para no tener un quebradero de cabeza cuando se conviertan a los calibres
+que mencionan para los diferentes pa√≠ses.
+*/
+IdPrecioDirigidoDetalle    int PRIMARY KEY,
+IdFrutaDetalle int   NOT NULL ,
+IdAcuerdo int   NOT NULL
+)
+GO
+
+GO
+CREATE TABLE CatFrutaCabeceraDetalleSemamanaPrecio(
+IdCatFrutaCabeceraDetalleSemamanaPrecio  int PRIMARY KEY,
+IdFrutaDetalle      int not null,
+IdSemana          int not null,
+IdFrutaCabeceraAcuerdo       int not null,
+Costo money
+)
+GO
+GO
+CREATE TABLE CatFrutaCabeceraDetalle(
+/* Uni√≥n de la cabecera
+*/
+IdFrutaCabeceraDetalle  int PRIMARY KEY,
+IdFrutaCabecera     int not null, 
+IdFrutaDetalle      int not null, 
+
+)
+GO
+
+CREATE TABLE CatCuentaContable(
+IdCuentaContable  int PRIMARY KEY,
+Idcuenta int not null,
+IdSubCuenta int not null,
+IdSubSubCuent int not null,
+Concepto varchar(200)
+)
+
+/*LLAVES FORANEAS*/
+
+GO
+ALTER TABLE CtrlOrdenCorteCtrlAcuerdo
+ADD CONSTRAINT  FKCtrlOrdenCorteCtrlAcuerdo_CtrlOrdenCorte
+FOREIGN KEY (IdOrdenCorte  )
+REFERENCES CtrlOrdenCorte (IdOrdenCorte)
+
+
+GO
+ALTER TABLE CtrlOrdenCorteCtrlAcuerdo
+ADD CONSTRAINT  FKCtrlOrdenCorteCtrlAcuerdo_CtrlAcuerdo
+FOREIGN KEY (IdAcuerdo)
+REFERENCES CtrlAcuerdo(IdAcuerdo)
+GO
+ALTER TABLE CatResponsableCuadrilla
+ADD CONSTRAINT  FKCatResponsableCuadrillaCatEmpresaCosechadora
+FOREIGN KEY (IdEmpresaCosechadora)
+REFERENCES CatEmpresaCosechadora(IdEmpresaCosechadora)
+go
+  
+ALTER TABLE CatVehiculo
+ADD CONSTRAINT  FKCatVehiculoCatEmpresaTransportista
+FOREIGN KEY (IdEmpresaTransportista)
+REFERENCES CatEmpresaTransportista(IdEmpresaTransportista)
+GO
+ALTER TABLE CatEntidadFederativa
+ADD CONSTRAINT  FKCatEntidadFederativaCatPais
+FOREIGN KEY (IdPais)
+REFERENCES CatPais(IdPais)
+
+GO
+ALTER TABLE CatMunicipio
+ADD CONSTRAINT  FKCatMunicipioCatEntidadFederativa
+FOREIGN KEY (IdEntidadFederativa)
+REFERENCES CatEntidadFederativa(IdEntidadFederativa)
+GO
+ALTER TABLE CatLocalidad
+ADD CONSTRAINT  FKCatLocalidadCatMunicipio
+FOREIGN KEY (IdMunicipio)
+REFERENCES CatMunicipio(IdMunicipio)
+GO
+--ALTER TABLE CtrlOrdenCorte
+--ADD CONSTRAINT  FKCtrlOrdenCorteCtrlAcuerdo
+--FOREIGN KEY (IdAcuerdo)
+--REFERENCES CtrlAcuerdo(IdAcuerdo)
+
+GO
+ALTER TABLE CtrlOrdenCorte
+ADD CONSTRAINT  FKCtrlOrdenCorteCatEmpresaCosechadora
+FOREIGN KEY (IdEmpresaCosechadora)
+REFERENCES CatEmpresaCosechadora(IdEmpresaCosechadora)
+GO
+
+
+GO
+ALTER TABLE CtrlOrdenCorte
+ADD CONSTRAINT  FKCtrlOrdenCorteCatEmpresaTransportista
+FOREIGN KEY (IdEmpresaTransportista)
+REFERENCES CatEmpresaTransportista(IdEmpresaTransportista)
+
+GO
+ALTER TABLE CatDocumentacionProceso
+ADD CONSTRAINT  FKCatDocumentacionProcesoCatDocumentacion
+FOREIGN KEY (IdDocumentacion)
+REFERENCES CatDocumentacion(IdDocumentacion)
+GO
+ALTER TABLE CatHuerta
+ADD CONSTRAINT  FKCatHuertaCatLocalidad
+FOREIGN KEY (idLocalidad)
+REFERENCES CatLocalidad(idLocalidad)
+GO
+ALTER TABLE CatFrutaCabecera
+ADD CONSTRAINT  FKCatFrutaCabeceraCatClaseFruta
+FOREIGN KEY (IdClaseFruta)
+REFERENCES CatClaseFruta(IdClaseFruta)
+GO
+ALTER TABLE CatFrutaCabecera
+ADD CONSTRAINT  FKCatFrutaCabeceraCatFloracion
+FOREIGN KEY (IdFloracion)
+REFERENCES CatFloracion(IdFloracion)
+GO
+ALTER TABLE CatFrutaCabecera
+ADD CONSTRAINT  FKCatFrutaCabeceraCatTipoCultivo
+FOREIGN KEY (IdTipoCultivo)
+REFERENCES CatTipoCultivo(IdTipoCultivo)
+GO
+
+ALTER TABLE CtrlProdHuerta
+ADD CONSTRAINT  FKCtrlProdHuertaCatHuerta
+FOREIGN KEY (idHuerta)
+REFERENCES CatHuerta(idHuerta)
+GO
+ALTER TABLE CtrlProdHuerta
+ADD CONSTRAINT  FKCtrlProdHuertaCatProductor
+FOREIGN KEY (IdProductor)
+REFERENCES CatProductor(IdProductor)
+GO
+
+ALTER TABLE CatDomicilio
+ADD CONSTRAINT  FKCatDomicilioCatTipoDomicilio
+FOREIGN KEY (IdTipoDomicilio)
+REFERENCES CatTipoDomicilio(IdTipoDomicilio)
+GO
+ALTER TABLE CatDomicilio
+ADD CONSTRAINT  FKCatDomicilioCatLocalidad
+FOREIGN KEY (IdLocalidad)
+REFERENCES CatLocalidad(IdLocalidad)
+------------------------------------------------------------
+GO
+ALTER TABLE CtrlEntidadDomicilio
+ADD CONSTRAINT  FKCtrlEntidadDomicilioCatProceso
+FOREIGN KEY (IdProceso)
+REFERENCES CatProceso(IdProceso)
+go
+ALTER TABLE CtrlEntidadDomicilio
+ADD CONSTRAINT  FKCtrlEntidadDomicilioCatDomicilio
+FOREIGN KEY (IdDomicilios)
+REFERENCES CatDomicilio(IdDomicilio)
+------------------------------------------------------------
+GO
+ALTER TABLE CtrlEntidadDocumentacion
+ADD CONSTRAINT  FKCtrlEntidadDocumentacionCatDocumentacionProceso
+FOREIGN KEY (IdDocumentacionProceso)
+REFERENCES CatDocumentacionProceso(IdDocumentacionProceso)
+
+GO
+
+ALTER TABLE CtrlCertificacionesHuerta
+ADD CONSTRAINT  FKCtrlCertificacionesHuertaCtrlCertificacionesHuerta
+FOREIGN KEY (IdCertificacion)
+REFERENCES CatCertificacion(IdCertificacion)
+
+GO
+ALTER TABLE CtrlCertificacionesHuerta
+ADD CONSTRAINT  FKCtrlCertificacionesHuertaCatHuerta
+FOREIGN KEY (idHuerta)
+REFERENCES CatHuerta(idHuerta)
+
+GO
+ALTER TABLE CatCertificacionesRequerida
+ADD CONSTRAINT  FKCatCertificacionesRequeridaCatCertificacion
+FOREIGN KEY (IdCertificacion)
+REFERENCES CatCertificacion(IdCertificacion)
+
+GO
+ALTER TABLE CatCertificacionesRequerida
+ADD CONSTRAINT  FKCatCertificacionesRequerida
+FOREIGN KEY (Idpais)
+REFERENCES  catpais(Idpais)
+GO
+ALTER TABLE CatCertificacionesRequerida
+ADD CONSTRAINT  FKCatCertificacionesRequeridaCatTipoCultivo
+FOREIGN KEY (IdTipoCultivo)
+REFERENCES CatTipoCultivo(IdTipoCultivo)
+
+GO
+
+GO
+ALTER TABLE CatCajasCorte
+ADD CONSTRAINT  FKCatCajasCorteCatTipoCultivo
+FOREIGN KEY (IdTipoCultivo)
+REFERENCES CatTipoCultivo(IdTipoCultivo)
+GO
+ALTER TABLE CatCajasCorte
+ADD CONSTRAINT  FKCatCajasCortecatpais
+FOREIGN KEY (idpais)
+REFERENCES catpais(idpais)
+
+GO
+GO
+ALTER TABLE CatConcepto
+ADD CONSTRAINT  FKCatConceptoCatProceso
+FOREIGN KEY (IdProceso)
+REFERENCES CatProceso(IdProceso)
+
+GO
+GO
+ALTER TABLE CtrlInventarioCajasCorte
+ADD CONSTRAINT  FKCtrlInventarioCajasCorteCatConcepto
+FOREIGN KEY (IdConcepto)
+REFERENCES CatConcepto(IdConcepto)
+GO
+GO
+
+ALTER TABLE CtrlInventarioCajasCorteOrden
+ADD CONSTRAINT  FKCtrlInventarioCajasCorteOrden_CtrlOrdenCorte
+FOREIGN KEY (IdOrdenCorte)
+REFERENCES CtrlOrdenCorte(IdOrdenCorte)
+GO
+GO
+ALTER TABLE CtrlInventarioCajasCorteOrden
+ADD CONSTRAINT  FKCtrlInventarioCajasCorteOrden_CtrlInventarioCajasCorte
+FOREIGN KEY (IdInventarioCajasCorte)
+REFERENCES CtrlInventarioCajasCorte(IdInventarioCajasCorte)
+GO
+GO
+
+
+ALTER TABLE CtrlPrevioSalidaCorte
+ADD CONSTRAINT  FKCtrlPrevioSalidaCorte_CtrlOrdenCorte
+FOREIGN KEY (IdOrdenCorte)
+REFERENCES CtrlOrdenCorte(IdOrdenCorte)
+GO
+ALTER TABLE CtrlPrevioSalidaCorte
+ADD CONSTRAINT  FKCtrlPrevioSalidaCorte_CatResponsableCuadrilla
+FOREIGN KEY (IdResponsableCuadrilla)
+REFERENCES CatResponsableCuadrilla(IdResponsableCuadrilla)
+GO
+GO
+ALTER TABLE CtrlPrevioSalidaCorte
+ADD CONSTRAINT  FKCtrlPrevioSalidaCorte_CatVehiculo
+FOREIGN KEY (idVehiculo)
+REFERENCES CatVehiculo(idVehiculo)
+GO
+ALTER TABLE CatStatus
+ADD CONSTRAINT  FKCatStatus_CatProceso
+FOREIGN KEY (IdProceso)
+REFERENCES CatProceso(IdProceso)
+GO
+go
+ALTER TABLE CtrlLote
+ADD CONSTRAINT  FKCtrlLote_CatMaquinaSeleccionadora
+FOREIGN KEY (idMaquinaSeleccionadora)
+REFERENCES CatMaquinaSeleccionadora(idMaquinaSeleccionadora)
+GO
+go
+--ALTER TABLE CtrlLoteOrdenCorte
+--ADD CONSTRAINT  FKCtrlLoteOrdenCorte_CtrlLote
+--FOREIGN KEY (IdLote)
+--REFERENCES CtrlLote(IdLote)
+--go
+--ALTER TABLE CtrlLoteOrdenCorte
+--ADD CONSTRAINT  FKCtrlLoteOrdenCorte_CtrlOrdenCorte
+--FOREIGN KEY (IdOrdenCorte)
+--REFERENCES CtrlOrdenCorte(IdOrdenCorte)
+GO
+GO
+ALTER TABLE CatIngresoEmpaque
+ADD CONSTRAINT  FKCatIngresoEmpaque_CtrlOrdenCorte
+FOREIGN KEY (idOrdenCorte)
+REFERENCES CtrlOrdenCorte(idOrdenCorte)
+GO
+GO
+ALTER TABLE CatBodegaGenerica
+ADD CONSTRAINT  FKCatBodegaGenerica_CatTipoBodegaGenerica
+FOREIGN KEY (idTipoBodegaGenerica)
+REFERENCES CatTipoBodegaGenerica(idTipoBodegaGenerica)
+GO
+
+GO
+ALTER TABLE CtrlInvBodegaGenerico
+ADD CONSTRAINT  FKCtrlInvBodegaGenerico_CatBodegaGenerica
+FOREIGN KEY (idBodegaGenerica)
+REFERENCES CatBodegaGenerica(idBodegaGenerica)
+GO
+ALTER TABLE CtrlInvBodegaGenerico
+ADD CONSTRAINT  FKCtrlInvBodegaGenericoCatCuentaContable
+FOREIGN KEY (IdCuentaContable)
+REFERENCES CatCuentaContable(IdCuentaContable)
+
+
+GO
+ALTER TABLE CtrlInvBodegaGenerico
+ADD CONSTRAINT  FKCtrlInvBodegaGenerico_CatConcepto
+FOREIGN KEY (IdConcepto)
+REFERENCES CatConcepto(IdConcepto)
+GO
+GO
+
 ALTER TABLE CtrlOrdenInvBodegaGenerico
-ADD FOREIGn KEY (IdInvBodegaGenerico)
+ADD CONSTRAINT  FKCtrlOrdenInvBodegaGenericoCtrlOrdenCorte
+FOREIGn KEY (IdOrdenCorte)
+REFERENCES CtrlOrdenCorte (IdOrdenCorte)
+GO
+
+
+
+ALTER TABLE CtrlOrdenInvBodegaGenerico
+ADD CONSTRAINT  FKCtrlOrdenInvBodegaGenerico_CtrlInvBodegaGenerico
+FOREIGn KEY (IdInvBodegaGenerico)
 REFERENCES CtrlInvBodegaGenerico (IdInvBodegaGenerico)
+GO
+            
+
+
+GO
+go
+ALTER TABLE CatCalibrePais
+ADD CONSTRAINT  FKCatCalibrePais_CatFrutaDetalle
+FOREIGN KEY (IdFrutaDetalle     )
+REFERENCES CatFrutaDetalle(IdFrutaDetalle     )
+go
+ALTER TABLE CatCalibrePais
+ADD CONSTRAINT  FKCatCalibrePais_catpais
+FOREIGN KEY (idPais     )
+REFERENCES catpais(idPais     )
+go
+ALTER TABLE CatFrutaCabeceraAcuerdo
+ADD CONSTRAINT  FKCatFrutaCabeceraAcuerdo_CatTipoCorte
+FOREIGN KEY (IdTipoCorte)
+REFERENCES CatTipoCorte(IdTipoCorte)
+GO
+ALTER TABLE CatFrutaCabeceraAcuerdo
+ADD CONSTRAINT  FKCatFrutaCabeceraAcuerdo_CatTipoBeneficiario
+FOREIGN KEY (IdTipoBeneficiario)
+REFERENCES CatTipoBeneficiario(IdTipoBeneficiario)
+
+GO
+ALTER TABLE CatFrutaCabeceraAcuerdo
+ADD CONSTRAINT  FKCatFrutaCabeceraAcuerdo_CatPais
+FOREIGN KEY (Idpais)
+REFERENCES CatPais(Idpais)
+GO
+GO
+ALTER TABLE CatFrutaCabeceraAcuerdo
+ADD CONSTRAINT  FKCatFrutaCabeceraAcuerdo_CatFrutaCabecera
+FOREIGN KEY (IdFrutaCabecera)
+REFERENCES CatFrutaCabecera(IdFrutaCabecera     )
+GO
+GO
+ALTER TABLE CtrlAcuerdo
+ADD CONSTRAINT  FKCtrlAcuerdo_CatCaracteristicasPesoFacturacion
+FOREIGN KEY (IdCaracteristicasPesoFacturacion)
+REFERENCES CatCaracteristicasPesoFacturacion(IdCaracteristicasPesoFacturacion)
+
+GO
+ALTER TABLE CtrlAcuerdo
+ADD CONSTRAINT  FKCtrlAcuerdo_CatFrutaCabeceraAcuerdo
+FOREIGN KEY (IdFrutaCabeceraAcuerdo)
+REFERENCES CatFrutaCabeceraAcuerdo(IdFrutaCabeceraAcuerdo)
+GO
+ALTER TABLE CtrlAcuerdo
+ADD CONSTRAINT  FKCtrlAcuerdo_CatBeneficiario
+FOREIGN KEY (IdBeneficiario)
+REFERENCES CatBeneficiario(IdBeneficiario)
+
+GO
+ALTER TABLE CtrlAcuerdo
+ADD CONSTRAINT  FKCtrlAcuerdo_CtrlProdHuerta
+FOREIGN KEY (IdProdHuerta)
+REFERENCES CtrlProdHuerta(IdProdHuerta)
+
+go
+ALTER TABLE CtrlAcuerdo
+ADD CONSTRAINT  FKCtrlAcuerdo_CatAcopiador
+FOREIGN KEY (IdAcopiador)
+REFERENCES CatAcopiador(IdAcopiador)
+
+
+ALTER TABLE CtrlPrecioDirigidoDetalle
+ADD CONSTRAINT  FKCtrlPrecioDirigidoDetalle_CatFrutaDetalle
+FOREIGN KEY (IdFrutaDetalle)
+REFERENCES CatFrutaDetalle(IdFrutaDetalle)
+GO
+ALTER TABLE CtrlPrecioDirigidoDetalle
+ADD CONSTRAINT  FKCtrlPrecioDirigidoDetalle_CtrlAcuerdo
+FOREIGN KEY (IdAcuerdo)
+REFERENCES CtrlAcuerdo(IdAcuerdo)
+GO
+ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio
+ADD CONSTRAINT  FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaDetalle
+FOREIGN KEY (IdFrutaDetalle)
+REFERENCES CatFrutaDetalle(IdFrutaDetalle     )
+GO
+GO
+ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio
+ADD CONSTRAINT  FKCatFrutaCabeceraDetalleSemamanaPrecio_CatFrutaCabeceraAcuerdo
+FOREIGN KEY (IdFrutaCabeceraAcuerdo)
+REFERENCES CatFrutaCabeceraAcuerdo(IdFrutaCabeceraAcuerdo     )
+GO
+ALTER TABLE CatFrutaCabeceraDetalleSemamanaPrecio
+ADD CONSTRAINT  FKCatFrutaCabeceraDetalleSemamanaPrecio_CatSemana
+FOREIGN KEY (IdSemana)
+REFERENCES CatSemana(IdSemana     )
+
+GO
+
+GO
+ALTER TABLE CatFrutaCabeceraDetalle
+ADD CONSTRAINT  FKCatFrutaCabeceraDetalle_CatFrutaDetalle
+FOREIGN KEY (IdFrutaDetalle)
+REFERENCES CatFrutaDetalle(IdFrutaDetalle)
+GO
+ALTER TABLE CatFrutaCabeceraDetalle
+ADD CONSTRAINT  FKCatFrutaCabeceraDetalle_CatFrutaCabecera
+FOREIGN KEY (IdFrutaCabecera)
+REFERENCES CatFrutaCabecera(IdFrutaCabecera)
